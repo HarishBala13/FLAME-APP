@@ -8,7 +8,7 @@ import nodemailer from "nodemailer";
 
 
 var database=sqldb.createConnection({
-   host: 'localhost', database:'FLAME_2k23', user:'root', password:'Harish@123'
+   host: '127.0.0.1', database:'FLAME_2k23', user:'root', password:'Harish@123', port:'3306'
 });
 database.connect((err,res)=>{
    if(err) console.log(err);
