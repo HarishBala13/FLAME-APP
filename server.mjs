@@ -13,17 +13,16 @@ const config={
    user:'root', 
    password:'Harish@123', 
    port:'3306'
-}
+};
 var database=sqldb.createPool(config);
 
-database.connect((err,res)=>{
+database.getConnection((err,res)=>{
    if(err) console.log(err);
    console.log("MySQL Connected Successfully...");
 });
 
 app.use(express.urlencoded({extended:false}));
 import { fileURLToPath}  from "url";
-import { config } from "process";
 const __filename = fileURLToPath(import.meta.url);
 console.log("My Filename : "+__filename);
 const __dirname=path.dirname(__filename);
