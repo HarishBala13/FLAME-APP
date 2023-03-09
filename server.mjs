@@ -6,7 +6,7 @@ import ejs from "ejs";
 const port=2000;
 import nodemailer from "nodemailer";
 
-config={
+const config={
    connectionLimit: 50,
    host: '127.0.0.1', 
    database:'FLAME_2k23', 
