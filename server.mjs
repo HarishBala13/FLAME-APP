@@ -7,17 +7,13 @@ import nodemailer from "nodemailer";
 
 
 app.use(express.urlencoded({extended:false}));
-import { fileURLToPath}  from "url";
-const __filename = fileURLToPath(import.meta.url);
-console.log("My Filename : "+__filename);
-const __dirname=path.dirname(__filename);
-console.log("My Dirname : "+__dirname);
-const location=path.join(__dirname,'./public');
-console.log("My location : "+location);
-app.use(express.static(location));
+app.use('/assets',express.static("public"));
 
 app.set("view engine","ejs");
 
+app.get('/',(req,res)=>{
+   res.render("index");
+});
 
  app.get('/emailform',(req,res)=>{
     res.render("emailform",{message:""});
@@ -49,6 +45,7 @@ app.set("view engine","ejs");
       }
       else{
       console.log('email sent : '+info.response);
+      res.render("index");
    }
    
 });
