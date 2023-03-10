@@ -95,13 +95,13 @@ html{
     font-size: 4em;
     color: #fff;
 }
-.span span{
+.span h2{
     display: block;
     background: url('/Images/Fire.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
-    background-clip: text;
+    -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: fire .8s linear infinite;
 }
