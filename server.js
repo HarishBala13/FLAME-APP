@@ -1,9 +1,11 @@
-import express from "express";
-const app=express()
-import path from "path";
-import ejs from "ejs";
-const port=2000;
-import nodemailer from "nodemailer";
+const express=require("express");
+const mongoose = require("mongoose");
+require("path");
+const nodemailer=require("nodemailer");
+require("dotenv").config();
+const app=express();
+const PORT=2000;
+const Book=require("./models/books");
 
 
 app.use(express.urlencoded({extended:false}));
@@ -11,8 +13,43 @@ app.use('/assets',express.static("public"));
 
 app.set("view engine","ejs");
 
+mongoose.set("strictQuery", false);
+const connectDB= async()=>{
+   try {
+      const conn=await mongoose.connect(process.env.MONGO_URI);
+      console.log("MongoDB Connected")
+   } catch (error) {
+      console.log(error);      
+   }
+}
+
 app.get('/',(req,res)=>{
    res.render("index");
+});
+
+app.get('/add', async(req,res)=>{
+   try {
+      await Book.insertMany([
+         {
+            title: "Car And The Road", body:"Text in this book"
+         },
+         {
+            title:"Games of Thrones",body:"Room clean panatta"
+         }
+      ]);
+   } catch (error) {
+      console.log(error);      
+   }
+});
+
+app.get('/books', async (req,res)=>{
+   const book=await Book.find();
+   if(book){
+      res.json(book);
+   }
+   else{
+      res.send("Something");
+   }
 });
 
  app.get('/emailform',(req,res)=>{
@@ -51,6 +88,9 @@ app.get('/',(req,res)=>{
 });
 });
 
- app.listen(port,()=>{
-    console.log("Port is running in "+port)
- });
+
+connectDB().then(()=>{
+   app.listen(PORT, ()=>{
+      console.log(`Listening On Port ${PORT}`)
+   })
+})
