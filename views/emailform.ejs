@@ -12,43 +12,38 @@
 <body>
   <div class="system">
       <form id="form" class="form" action="/dbregister" method="post" onsubmit="return submitvalidate()">
-        <h2 id="h2">Create account</h2>
+        <section class="heading">
+          <p class="first">FLAME-2k23</p>
+          <p class="second">REGISTRATION</p>
+       </section>
+        <h2 id="h2"></h2>
         <%if(message){%>
           <p> <%=message%></p>
         <%} %>
         
-          <input type="text" placeholder="Enter your name" id="name" name="name" onkeyup="nameerror()">
+          <input type="text" placeholder="Enter your Name" id="name" name="name" onkeyup="nameerror()">
           <small id="error1">Error Message</small>
-        
-          <input type="text" placeholder="Enter your email" id="email" name="email" onkeyup="emailerror()">
-          <small id="error2">Error Message</small>
-      
-          <input type="password" placeholder="Enter your password" id="set_password" name="set_password" onkeyup="spasserror()">
-          <small id="error3">Error Message</small>
 
-          <input type="password" placeholder="Enter the above password" id="confirm_password" name="confirm_password" onkeyup="cpasserror()">
-          <small id="error4">Error Message</small>
+          <input type="text" placeholder="Enter your College Name" id="collegename" name="collegename">
+        
+          <input type="text" placeholder="Enter your Email-ID" id="email" name="email" onkeyup="emailerror()">
+          <small id="error2">Error Message</small>
+          
+          <input type="text" placeholder="Enter your Mobile Number" id="mobilenumber" name="mobilenumber">
+          
         <button type="submit">Submit</button>
       </form>
     </div>
-
-
-    <div class="image">
-        <img src="/assets/images/Flame_with_bg-removebg-preview_adobe_express.svg" alt=""><br>
-        <img src="/assets/images/Flame_with_bg-removebg-preview_adobe_express.svg" alt=""><br>
-        <img src="/assets/images/Flame_with_bg-removebg-preview_adobe_express.svg" alt=""><br>
-    </div>
-
-    
+ 
 <script>
 const name=document.getElementById("name");
+const collegename=document.getElementById("collegename");
 const email=document.getElementById("email");
-const spass=document.getElementById("set_password");
-const cpass=document.getElementById("confirm_password");
+const mobilenumber=document.getElementById("mobilenumber");
+
 const error1=document.getElementById("error1");
 const error2=document.getElementById("error2");
-const error3=document.getElementById("error3");
-const error4=document.getElementById("error4");
+
 var count=0;
 function nameerror(){
   const name1=name.value;
@@ -89,52 +84,8 @@ function emailerror(){
   }
 }
 
-function spasserror(){
-  const spass1=spass.value;
-    if(spass1==''){
-    error3.innerHTML="This Field should'nt be empty";
-    error3.style.visibility="visible";
-    spass.style.border="2px solid red";
-  }
-  else if(spass1.length<=4){
-    error3.innerHTML="Weak Password need to update";
-    error3.style.visibility="visible";
-    spass.style.border="2px solid red";
-    }
-    else if(spass1.length<=7){
-    error3.innerHTML="Medium Password need to update";
-    error3.style.visibility="visible";
-    spass.style.border="2px solid red";
-    }
-    else{
-    error3.style.visibility="hidden";
-    spass.style.border="2px solid green";
-    return count++;
-    } 
-}
-
-function cpasserror(){
-  const spass1=spass.value;
-  const cpass1=cpass.value;
-    if(cpass1==''){
-    error4.innerHTML="This Field should'nt be empty";
-    error4.style.visibility="visible";
-    cpass.style.border="2px solid red";
-  }
-    else if(cpass1!=spass1){
-    error4.innerHTML="Password doesn't match";
-    error4.style.visibility="visible";
-    cpass.style.border="2px solid red";
-    }
-    else{
-        error4.style.visibility="hidden";
-    cpass.style.border="2px solid green";
-    return count++;
-    } 
-}
-
 function submitvalidate(){
-  if(count>=4)  return true;
+  if(count>=2)  return true;
   else return false;
 }
 

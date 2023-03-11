@@ -6,6 +6,7 @@ require("dotenv").config();
 const app=express();
 const PORT=2000;
 const Book=require("./models/books");
+const registerform = require("./models/registerform");
 
 
 app.use(express.urlencoded({extended:false}));
@@ -55,9 +56,19 @@ app.get('/books', async (req,res)=>{
  app.get('/emailform',(req,res)=>{
     res.render("emailform",{message:""});
  });
- app.post('/dbregister',(req,res)=>{
+ app.post('/dbregister', async (req,res)=>{
    const email=req.body.email;
    const name=req.body.name;
+   const mobilenumber=req.body.mobilenumber;
+   const collegename=req.body.collegename;
+   console.table(req.body);
+
+  try{
+   await registerform.insertMany([
+      {
+         User_Name: name, User_College_Name: collegename, User_Email: email, User_Mobile_Number:mobilenumber
+      }
+   ])
    var transporter=nodemailer.createTransport({
       service:'gmail',
       auth:{
@@ -86,6 +97,12 @@ app.get('/books', async (req,res)=>{
    }
    
 });
+
+}
+catch(error){
+   console.log(error)
+}
+
 });
 
 

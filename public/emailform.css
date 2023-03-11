@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
 }
 body{
     display: grid;
@@ -12,17 +14,55 @@ body{
     min-height: 100vh;
     background: rgb(255, 255, 255);
 }
+.heading{
+    position: relative;
+    margin-bottom: 1.5%;
+}
+
+.first{
+    animation: first 1.5s linear 1;
+    position: absolute;
+    top: 19%;
+    left: 18%;
+    color: black;
+}
+@keyframes first {
+    0%{
+        transform: translateX(-1000px);
+    }
+    100%{
+        transform: translateX(0px);
+        transition: transform 500ms ease-in-out;
+    }
+}
+.second{
+    animation: second 1.5s linear 1;
+    position: absolute;
+    top: 19%;
+    left: 55%;
+    color: black;
+}
+@keyframes second{
+    0%{
+        transform: translateX(1000px);
+    }
+    100%{
+        transform: translateX(0px);
+        transition: transform 500ms ease-in-out;
+    }
+}
+
 .form #h2{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color: black;
     text-align: center;
     padding: 20px 40px;
 }
 .form{
-    width: 25rem;
+  width: 25rem;
   background: rgb(255, 255, 255);
   box-shadow: 0px 5px 20px 4px rgba(22, 22, 22, 0.874);
   border-radius: 20px 35px 20px 35px;
+  position: relative;
 }
 input{
     width: 60%;
