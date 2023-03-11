@@ -47,6 +47,7 @@ app.get('/books', async (req,res)=>{
    const book=await Book.find();
    if(book){
       res.json(book);
+      console.log(book.title);
    }
    else{
       res.send("Something");
@@ -59,16 +60,16 @@ app.get('/books', async (req,res)=>{
  app.post('/dbregister', async (req,res)=>{
    const email=req.body.email;
    const name=req.body.name;
-   const mobilenumber=req.body.mobilenumber;
-   const collegename=req.body.collegename;
-   console.table(req.body);
+//    const mobilenumber=req.body.mobilenumber;
+//    const collegename=req.body.collegename;
+//    console.table(req.body);
 
-  try{
-   await registerform.insertMany([
-      {
-         User_Name: name, User_College_Name: collegename, User_Email: email, User_Mobile_Number:mobilenumber
-      }
-   ])
+//   try{
+//    await registerform.insertMany([
+//       {
+//          User_Name: name, User_College_Name: collegename, User_Email: email, User_Mobile_Number:mobilenumber
+//       }
+//    ])
    var transporter=nodemailer.createTransport({
       service:'gmail',
       auth:{
@@ -97,12 +98,6 @@ app.get('/books', async (req,res)=>{
    }
    
 });
-
-}
-catch(error){
-   console.log(error)
-}
-
 });
 
 
