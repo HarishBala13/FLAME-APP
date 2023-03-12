@@ -28,6 +28,10 @@ app.get('/',(req,res)=>{
    res.render("index");
 });
 
+app.get('/payment',(req,res)=>{
+   res.render("payment",{message:"Hi! "});
+});
+
 app.get('/add', async(req,res)=>{
    try {
       await Book.insertMany([
@@ -73,15 +77,15 @@ app.get('/books', async (req,res)=>{
    var transporter=nodemailer.createTransport({
       service:'gmail',
       auth:{
-         user:'2k19me016@kiot.ac.in',
-         pass:'harish@13kiot'
+         user:process.env.EMAIL_ID,
+         pass:process.env.EMAIL_PASSWORD
       }
       });
       var mailoptions={
       from:'2k19me016@kiot.ac.in',
       to:email,
       subject:'Thanks for Registering',
-      text:`Hi `+name,
+      text:`Hi `+ name,
       html:`<div>
       <h4 style="font-size:20px;">Thanks for choosing our Service</h4>
       <img style=" width: 65px; height: 45px; border-radius: 50%; " src="https://i0.wp.com/kiot.ac.in/wp-content/uploads/2022/04/logo.png?resize=134%2C138&ssl=1" alt="FLAME logo">

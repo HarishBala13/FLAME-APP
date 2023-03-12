@@ -12,6 +12,9 @@ const RegisterSchema = new Schema({
     },
     User_Mobile_Number:{
         type:String, required:true,
+    },
+    User_Team_Numbers:{
+        type:String, required: true,
     }
 });
 module.exports = mongoose.model("Registration", RegisterSchema);

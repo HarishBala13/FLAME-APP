@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', 'sans-serif';
+}
+.payment{
+    display: grid;
+    place-items: center;
+    border: 2px solid yellowgreen;
+    padding: 2%;
+}
+.message{
+    color: green;
+    font-weight: 600;
+}
+.QR{
+    text-align: center;
+    font-size: 0.8cm;
+    font-weight: 500;  
+}
+.image{
+    width: 70%;
+    height: 80%;
+}

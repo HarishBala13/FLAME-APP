@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/assets/payment.css">
+    <title>Payment</title>
+</head>
+<body>
+   <section class="payment">
+    <div class="message">
+        <%if(message) {%>
+            <span><%=message%></span>
+        <%}%>
+    </div>
+    <p class="QR">Please Scan the QR code to proceed the payment</p>
+    <img src="/assets/images/Blink Movies.jpg" alt="" class="image">
+    <span>or</span>
+    <p>Click the below link</p>
+    <a href="upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=600.00&cu=INR&aid=uGICAgID9js7ZHw">Click here</a>
+   </section>
+</body>
+</html>
