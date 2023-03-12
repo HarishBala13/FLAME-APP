@@ -6,138 +6,141 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>form</title>
     <link rel="stylesheet" href="/assets/form.css">
-    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"> -->
 </head>
 <body>
-    <div class="form">  
-        <form action="/signup" method="post" onsubmit="return validate()">
-            <h1 class="topic">register form</h1>
-            <div class="flex">
-            <div class="right">
-                <div class="rights">
-                    <input type="text" placeholder="Enter the name of participants" class="field" name="partname" id="partname" onkeyup="validName()">
-                    <small id="error1">error message</small>
-                </div>
-                <div class="rights">
-                    <input type="text" placeholder="Enter the Mail Id of participants" class="field" name="email" id="email" onkeyup="validateEmail()">
-                    <small id="error5">error message</small>
-                </div>
-                <div class="rights">
-                    <input type="text" placeholder="Enter your college name" class="field" name="collegename" id="collegename" onkeyup="validCollegeName()">
-                    <small id="error4">error message</small>
-                </div>
-                <div class="rights">
-                    <input type="text" placeholder="Enter the team name" class="field" name="teamname" id="teamname" onkeyup="validTeamName()">
-                    <small id="error3">error message</small>
-                </div>
-                <div class="rights">
-                    <input type="text" placeholder="Enter your mobile" class="field" name="mobile" id="mobile" onkeyup="validateMobile()">
-                    <small id="error2">error message</small>
-                </div>
-                <div class="rights">
-                    <label for="">no of team members</label>
-                    <div class="member">
-                        <input type="checkbox" id="member" name="member" value="1" onclick="memberValidate(this)"><h4>1 member</h4>
-                    </div>
-                    <div class="member">
-                        <input type="checkbox" id="member" value="2" name="member" onclick="memberValidate(this)"><h4>2 members</h4>
-                    </div>
-                    <div class="member">
-                        <input type="checkbox" id="member" value="3" name="member" onclick="memberValidate(this)"><h4>3 members</h4>
-                    </div>
-                    <div class="member"> 
-                        <input type="checkbox" id="member" value="4" name="member" onclick="memberValidate(this)"><h4>4 members</h4>
-                    </div>
-                    <div class="member">
-                        <small id="memError" class="memError">error message</small>
-                    </div>
-                   </div>
-            </div>
-            <div class="left">
-                <div class="lefts">
-                    <label for="">choose your year of studying</label>
-                    <div class="year">
-                        <input type="checkbox" id="year" value="I" name="year" onclick="yearValidate(this)">
-                        <h4>I year</h4>
-                    </div>
-                    <div class="year">
-                        <input type="checkbox" id="year" value="II" name="year"  onclick="yearValidate(this)">
-                        <h4>II year</h4>
-                    </div>
-                    <div class="year">
-                        <input type="checkbox" id="year" value="III" name="year"  onclick="yearValidate(this)">
-                        <h4>III year</h4>
-                    </div>
-                    <div class="year">
-                        <input type="checkbox" id="year" value="IV" name="year"  onclick="yearValidate(this)">
-                        <h4>IV year</h4>
-                    </div>
-                    <small class="yearError" id="yearError">error message</small>
-                 </div>
-    
-                    <label for="">technical events</label>
-                    <div class="techEvents">
-                        <input type="checkbox" id="event" value="Paper Presentation" name="techevent" onclick="techeventValidate(this)">
-                        <h4>Paper Presentation</h4>
-                    </div>
-                    <div class="techEvents">
-                        <input type="checkbox" id="event" value="Design Dynastry" name="techevent" onclick="techeventValidate(this)">
-                        <h4>Design Dynastry</h4>
-                    </div>
-                    <div class="techEvents">
-                        <input type="checkbox" id="event" value="Engine Assembly" name="techevent" onclick="techeventValidate(this)">
-                        <h4>Engine Assembly</h4>
-                    </div>
-                    <div class="techEvents">
-                        <input type="checkbox" id="event" value="Brain Bytes" name="techevent" onclick="techeventValidate(this)">
-                        <h4>Brain Bytes</h4>
-                    </div>
-                    <div class="techEvents">
-                        <input type="checkbox" id="event" value="Logic Lingo" name="techevent" onclick="techeventValidate(this)">
-                        <h4>Logic Lingo</h4>
-                    </div>
-                    <div class="techEvents">
-                        <input type="checkbox" id="event" value="Visual Memory" name="techevent" onclick="techeventValidate(this)">
-                        <h4>Visual Memory</h4>
-                    </div>
-                    
-                    <small id="techeventError" class="techeventError">error message</small>
-               
-                    <label for="">nontechnical events</label>
-                    <div class="nontechEvents">
-                        <input type="checkbox" id="event" value="Blink Movies" name="nontechevent" onclick="nontecheventValidate(this)">
-                        <h4>Blink Movies</h4>
-                    </div>
-                    <div class="nontechEvents">
-                        <input type="checkbox" id="event" value="Face Art" name="nontechevent" onclick="nontecheventValidate(this)">
-                        <h4>Face Art</h4>
-                    </div>
-                    <div class="nontechEvents">
-                        <input type="checkbox" id="event" value="Chain Reaction" name="nontechevent" onclick="nontecheventValidate(this)">
-                        <h4>Chain Reaction</h4>
-                    </div>
-                    <div class="nontechEvents">
-                        <input type="checkbox" id="event" value="Body Language Ballet" name="nontechevent" onclick="nontecheventValidate(this)">
-                        <h4>Body Language Ballet</h4>
-                    </div>
-                    <div class="nontechEvents">
-                        <input type="checkbox" id="event" value="Meme Creation" name="nontechevent" onclick="nontecheventValidate(this)">
-                        <h4>Meme Creation</h4>
-                    </div>
-                    <small id="nontecheventError" class="nontecheventError">error message</small>
-                    <div class="lefts">
-                      <input type="checkbox" name="workshop" value="yes" id="workshop" class="workshop">
-                      <h2 class="work">E-Bike Workshop</h2>
-                  </div>
-                  <div>
-                    <button type="submit" class="register">register</button>
-                  </div>
-                
-                
-            </div>
-          </div>
-                 
-        </form>
+    <div class="color">
+        <h1 class="title">registration</h1>
+        <h1 class="title1">form</h1>
+        <div class="red"></div>
+        <div class="green"></div>
+            <div class="form"> 
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span> 
+                    <form action="/signupValue" method="post" onsubmit="return validate()">
+                        <div class="right">
+                            <div class="rights">
+                                <input type="text" placeholder="Enter the Name of Participant(s)" class="field" name="partname" id="partname" onkeyup="validName()">
+                                <small id="error1">error message</small>
+                            </div>
+                            <div class="rights">
+                                <input type="text" placeholder="Enter the Email-id of Participant(s)" class="field" name="email" id="email" onkeyup="validateEmail()">
+                                <small id="error5">error message</small>
+                            </div>
+                            <div class="rights">
+                                <input type="text" placeholder="Enter your College Name" class="field" name="collegename" id="collegename" onkeyup="validCollegeName()">
+                                <small id="error4">error message</small>
+                            </div>
+                            <div class="rights">
+                                <input type="text" placeholder="Enter the Team Name" class="field" name="teamname" id="teamname" onkeyup="validTeamName()">
+                                <small id="error3">error message</small>
+                            </div>
+                            <div class="rights">
+                                <input type="text" placeholder="Enter your Mobile Number" class="field" name="mobile" id="mobile" onkeyup="validateMobile()">
+                                <small id="error2">error message</small>
+                            </div>
+                            <div class="rights">
+                                <label for="">No of Team Members</label>
+                                <div class="member">
+                                    <input type="checkbox" id="member" name="member" value="1" onclick="memberValidate(this)"><h4>1 member</h4>
+                                </div>
+                                <div class="member">
+                                    <input type="checkbox" id="member" value="2" name="member" onclick="memberValidate(this)"><h4>2 members</h4>
+                                </div>
+                                <div class="member">
+                                    <input type="checkbox" id="member" value="3" name="member" onclick="memberValidate(this)"><h4>3 members</h4>
+                                </div>
+                                <div class="member"> 
+                                    <input type="checkbox" id="member" value="4" name="member" onclick="memberValidate(this)"><h4>4 members</h4>
+                                </div>
+                                <div class="member">
+                                    <small id="memError" class="memError">error message</small>
+                                </div>
+                               </div>
+                        </div>
+                        <div class="left">
+                            <div class="lefts">
+                                <label for="">Choose your Year of Studying</label>
+                                <div class="year">
+                                    <input type="checkbox" id="year" value="I" name="year" onclick="yearValidate(this)">
+                                    <h4>I year</h4>
+                                </div>
+                                <div class="year">
+                                    <input type="checkbox" id="year" value="II" name="year"  onclick="yearValidate(this)">
+                                    <h4>II year</h4>
+                                </div>
+                                <div class="year">
+                                    <input type="checkbox" id="year" value="III" name="year"  onclick="yearValidate(this)">
+                                    <h4>III year</h4>
+                                </div>
+                                <div class="year">
+                                    <input type="checkbox" id="year" value="IV" name="year"  onclick="yearValidate(this)">
+                                    <h4>IV year</h4>
+                                </div>
+                                <small class="yearError" id="yearError">error message</small>
+                             </div>
+                             <div class="lefts">
+                                <label for="">Technical events</label>
+                                <div class="techEvents">
+                                    <input type="checkbox" id="event" value="Paper Presentation" name="techevent" onclick="techeventValidate(this)">
+                                    <h4>Paper Presentation</h4>
+                                </div>
+                                <div class="techEvents">
+                                    <input type="checkbox" id="event" value="Design Dynastry" name="techevent" onclick="techeventValidate(this)">
+                                    <h4>Design Dynastry</h4>
+                                </div>
+                                <div class="techEvents">
+                                    <input type="checkbox" id="event" value="Engine Assembly" name="techevent" onclick="techeventValidate(this)">
+                                    <h4>Engine Assembly</h4>
+                                </div>
+                                <div class="techEvents">
+                                    <input type="checkbox" id="event" value="Brain Bytes" name="techevent" onclick="techeventValidate(this)">
+                                    <h4>Brain Bytes</h4>
+                                </div>
+                                <div class="techEvents">
+                                    <input type="checkbox" id="event" value="Logic Lingo" name="techevent" onclick="techeventValidate(this)">
+                                    <h4>Logic Lingo</h4>
+                                </div>
+                                <div class="techEvents">
+                                    <input type="checkbox" id="event" value="Visual Memory" name="techevent" onclick="techeventValidate(this)">
+                                    <h4>Visual Memory</h4>
+                                </div>
+                                
+                                <small id="techeventError" class="techeventError">error message</small>
+                            </div>
+                            <div class="lefts">
+                                <label for="">Non-Technical events</label>
+                                <div class="nontechEvents">
+                                    <input type="checkbox" id="event" value="Blink Movies" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <h4>Blink Movies</h4>
+                                </div>
+                                <div class="nontechEvents">
+                                    <input type="checkbox" id="event" value="Face Art" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <h4>Face Art</h4>
+                                </div>
+                                <div class="nontechEvents">
+                                    <input type="checkbox" id="event" value="Chain Reaction" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <h4>Chain Reaction</h4>
+                                </div>
+                                <div class="nontechEvents">
+                                    <input type="checkbox" id="event" value="Body Language Ballet" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <h4>Body Language Ballet</h4>
+                                </div>
+                                <div class="nontechEvents">
+                                    <input type="checkbox" id="event" value="Meme Creation" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <h4>Meme Creation</h4>
+                                </div>
+                                <small id="nontecheventError" class="nontecheventError">error message</small>
+                            </div>
+                            <div class="lefts">
+                                <input type="checkbox" name="workshop" value="yes" id="workshop" class="workshop">
+                                <h4 class="work">E-Bike Workshop</h4>
+                            </div>
+                        </div>                      
+                             <button type="submit" class="register">register</button>
+                    </form>
+                </div>  
     </div>
 
     <script>
@@ -153,6 +156,7 @@
         var l=0;
         
         var count=0;
+        const membererror=document.getElementById('memError');
         function memberValidate(mem){
             if(!member.includes(mem.value)){
                 member[i++]=mem.value;
@@ -164,7 +168,8 @@
             }
             else if(member.length<1){
                 member=[];
-                document.getElementById('memError').innerHTML="select atleast one option";
+                membererror.style.color="red";
+                document.getElementById('memError').innerHTML="select any one option";
             }
             else{
                  member[i++]=mem.value;
@@ -172,15 +177,18 @@
             console.log(member);
             if(member.length==1){
                 document.getElementById('memError').innerText="success";
-            
-                document.getElementById('memError').style.display="block";
+                membererror.style.color="green";
+                
+                document.getElementById('memError').style.visibility="visible";
                 return count++;
             }
             else{
-                document.getElementById('memError').innerText="select any one option";
+                membererror.style.color="red";
+                document.getElementById('memError').innerHTML="select any one option";
             }
             
         }
+        const yearerror=document.getElementById("yearError");
         function yearValidate(ye){
             if(!year.includes(ye.value)){
                 year[j++]=ye.value;
@@ -192,22 +200,26 @@
             }
             else if(year.length<1){
                 year=[];
-                document.getElementById('yearError').innerHTML="select atleast one option";
+                yearerror.style.color="red";
+                document.getElementById('yearError').innerHTML="select any one option";
             }
             else{
                 year[i++]=ye.value;
             }
 
             if(year.length==1){
-                document.getElementById('yearError').innerText="success";            
-                document.getElementById('yearError').style.display="block";
+                document.getElementById('yearError').innerText="success";
+                yearerror.style.color="green";            
+                document.getElementById('yearError').style.visibility="visible";
                 return count++;            
             }
             else{
+                yearerror.style.color="red";
                 document.getElementById('yearError').innerText="select any one option";
             }
             
         }
+        const techev=document.getElementById("techeventError");
         function techeventValidate(ev){
             if(!techevent.includes(ev.value)){
                 techevent[k++]=ev.value;
@@ -219,7 +231,8 @@
             }
             else if(techevent.length<1){
                 techevent=[];
-                document.getElementById('techeventError').innerHTML="select atleast one option";
+                techev.style.color="red";
+                document.getElementById('techeventError').innerHTML="select any one option";
             }
             else{
                 techevent[k++]=ev.value;
@@ -227,14 +240,17 @@
 
            if(techevent.length==1){
                 document.getElementById('techeventError').innerText="success";
-                document.getElementById('techeventError').style.display="block";  
+                techev.style.color="green";
+                document.getElementById('techeventError').style.visibility="visible";  
                 return count++;          
             }
             else{
-                document.getElementById('techeventError').innerText="select any one option only";
+                techev.style.color="red";
+                document.getElementById('techeventError').innerText="select any one option";
             }
             
         }
+        const nontechev=document.getElementById('nontecheventError');
         function nontecheventValidate(ev){
             if(!nontechevent.includes(ev.value)){
                 nontechevent[l++]=ev.value;
@@ -246,7 +262,8 @@
             }
             else if(nontechevent.length<1){
                 nontechevent=[];
-                document.getElementById('nontecheventError').innerHTML="select atleast one option";
+                nontechev.style.color="red";
+                document.getElementById('nontecheventError').innerHTML="select any one option";
             }
             else{
                 nontechevent[k++]=ev.value;
@@ -254,11 +271,13 @@
 
            if(nontechevent.length==1){
                 document.getElementById('nontecheventError').innerText="success";
-                document.getElementById('nontecheventError').style.display="block";
+                nontechev.style.color="green";
+                document.getElementById('nontecheventError').style.visibility="visible";
                 return count++;            
             }
             else{
-                document.getElementById('nontecheventError').innerText="select any one option only";
+                nontechev.style.color="red";
+                document.getElementById('nontecheventError').innerText="select any one option";
             }
             
         }
@@ -275,26 +294,22 @@
         function validName(){
         const user=username.value;
         if(user==" "){
-           username.style.border="2px solid red";
             error1.style.color="red";
             error1.innerHTML="do not blank";
             error1.style.visibility="visible";
            
         }
         else if(user.length<6){
-           username.style.border="2px solid red";
             error1.style.color="red";
            error1.innerHTML="Username must contains 6 letters";
             error1.style.visibility="visible";
          }
          else if(!namecheck(username)){
-           username.style.border="2px solid red";
             error1.style.color="red";
            error1.innerHTML="Username only characters";
             error1.style.visibility="visible";
          }
          else{
-            username.style.border="2px solid green";
             error1.style.color="green";
             error1.innerHTML="success";
             error1.style.visibility="visible";
@@ -332,26 +347,21 @@
     function validTeamName(){
         const user=teamname.value;
         if(user==" "){
-            teamname.style.border="2px solid red";
             error3.style.color="red";
             error3.innerHTML="do not blank";
             error3.style.visibility="visible";
-           
         }
         else if(user.length<6){
-            teamname.style.border="2px solid red";
             error3.style.color="red";
            error3.innerHTML="Username must contains 6 letters";
             error3.style.visibility="visible";
          }
          else if(!teamnamecheck(teamname)){
-            teamname.style.border="2px solid red";
             error3.style.color="red";
            error3.innerHTML="Username only characters";
             error3.style.visibility="visible";
          }
          else{
-            teamname.style.border="2px solid green";
             error3.style.color="green";
             error3.innerHTML="success";
             error3.style.visibility="visible";
@@ -386,26 +396,22 @@
         function validCollegeName(){
         const user=collegename.value;
         if(user==" "){
-            collegename.style.border="2px solid red";
             error4.style.color="red";
             error4.innerHTML="do not blank";
             error4.style.visibility="visible";
            
         }
         else if(user.length<6){
-            collegename.style.border="2px solid red";
             error4.style.color="red";
            error4.innerHTML="Username must contains 6 letters";
             error4.style.visibility="visible";
          }
          else if(!collegenamecheck(collegename)){
-            collegename.style.border="2px solid red";
             error4.style.color="red";
            error4.innerHTML="Username only characters";
             error4.style.visibility="visible";
          }
          else{
-            collegename.style.border="2px solid green";
             error4.style.color="green";
             error4.innerHTML="success";
             error4.style.visibility="visible";
@@ -442,21 +448,18 @@
             function validateMobile(){
                 const mob=mobile.value;
                 if(mob==" "){
-                 mobile.style.border="2px solid red";
                  error2.style.color="red";
                  error2.innerHTML="do not blank";
                  error2.style.visibility="visible";
                  
                 }
                 else if(!mobilecheck(mobile)){
-            mobile.style.border="2px solid red";
             error2.style.color="red";
             error2.innerHTML="mobile number should contains only numbers";
             error2.style.visibility="visible";
           
         }
         else{
-            mobile.style.border="2px solid green";
             error2.style.color="green";
             error2.innerHTML="success";
             error2.style.visibility="visible";
@@ -495,19 +498,16 @@
                 const emaiValue=emai.value;
                 console.log(emaiValue);
                 if(emaiValue==""){
-                    emai.style.border="2px solid red";
             error5.style.color="red";
             error5.innerHTML="do not blank";
             error5.style.visibility="visible";
                 }
                 else if(!emailcheck(emai)){
-                    emai.style.border="2px solid red";
             error5.style.color="red";
             error5.innerHTML="email contains @,.com or .in";
             error5.style.visibility="visible";
                 }
                 else{
-                    emai.style.border="2px solid green";
             error5.style.color="green";
             error5.innerHTML="success";
             error5.style.visibility="visible";
