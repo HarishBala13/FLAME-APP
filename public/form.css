@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins','sans-serif';
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 97vh;
+}
+.form{
+    border: 2px solid black;
+    width: 50%;
+    height: 90vh;
+    border-radius: 35px;
+    position: relative;
+    padding: 1rem;
+}
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+}
+/* .left{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    top: 15%;
+    width: 50%;
+}
+.right{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 5%;
+    top: 15%;
+    width: 40%;
+} */
+
+.rights{
+    margin-bottom: 5%;
+}
+.field{
+    height: 30px;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: none;
+    margin-bottom: 2%;
+}
+.lefts{
+    margin-bottom: 2%;
+}
+.lefts label{
+    font-size: 0.5cm;
+    font-weight: bold;
+    margin-left: 20%;
+}
+.rights label{
+    font-size: 0.5cm;
+    font-weight: bold;
+    margin-left: 20%;
+}
+.lefts:nth-child(1){
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.lefts:nth-child(1) h4{
+    position: absolute;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+.rights:nth-child(6){
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.rights:nth-child(6) h4{
+    position: absolute;
+    width: 50%;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+.lefts:nth-child(2){
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.lefts:nth-child(2) h4{
+    position: absolute;
+    width: 50%;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+.lefts:nth-child(3){
+    border: none;
+    display: flex;
+    flex-direction: column;
+}
+.lefts:nth-child(3) h4{
+    position: absolute;
+    width: 50%;
+    margin-left: 30px;
+    margin-top: -20px;
+}
+.topic{
+    margin-left: 30%;
+    text-transform: uppercase;
+    color: limegreen;
+}
+.register{
+    position: absolute;
+    top: 92%;
+    left: 5%;
+    height: 40px;
+    width: 90%;
+    border: none;
+    text-transform: uppercase;
+    color: white;
+    background-color: limegreen;
+    font-size: 0.5cm;
+}
+.workshop{
+    position: absolute;
+    top: 100%;
+    width: 20px;
+    height: 20px;
+}
+.work{
+    position: absolute;
+    top: 95%;
+    left: 10%; 
+}
+#error1{
+    visibility: hidden;
+}
+#error2{
+    visibility: hidden;
+}
+#error3{
+    visibility: hidden;
+}
+#error4{
+    visibility: hidden;
+}
+#error5{
+    visibility: hidden;
+}       
+
+.memError{
+    display: none;
+}
+.yearError{
+    display: none;
+}
+.techeventError{
+    display: none;
+}
+.nontecheventError{
+    display: none;
+}

@@ -8,19 +8,44 @@
 .payment{
     display: grid;
     place-items: center;
-    border: 2px solid yellowgreen;
-    padding: 2%;
+    border: 5px solid yellowgreen;
+    min-height: 100vh;
+}
+.payment span{
+    font-size: 0.8cm;
+    font-weight: 800;
 }
 .message{
     color: green;
-    font-weight: 600;
+    font-weight: 800;
+}
+.payment >p{
+    color: yellow;
 }
 .QR{
     text-align: center;
     font-size: 0.8cm;
     font-weight: 500;  
 }
-.image{
-    width: 70%;
-    height: 80%;
+.payment img{
+    width: 200px;
+    height: 200px;
+}
+.button{
+    padding: 1rem;
+    width: 45%;
+    border: none;
+    border-radius: 30px;
+    background-color: green;
+    opacity: 0.8;
+    box-shadow: 0px 2px 0px 2px #000;
+}
+.button:hover, .button:focus{
+    opacity: 1;
+    box-shadow: 2px 0px 2px 0px #000;
+}
+.button a{
+    text-decoration: none;
+    font-size: 0.8cm;
+    color: white;
 }

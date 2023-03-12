@@ -8,17 +8,14 @@
     <title>Payment</title>
 </head>
 <body>
-   <section class="payment">
-    <div class="message">
-        <%if(message) {%>
-            <span><%=message%></span>
-        <%}%>
-    </div>
-    <p class="QR">Please Scan the QR code to proceed the payment</p>
-    <img src="/assets/images/Blink Movies.jpg" alt="" class="image">
-    <span>or</span>
-    <p>Click the below link</p>
-    <a href="upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=600.00&cu=INR&aid=uGICAgID9js7ZHw">Click here</a>
-   </section>
+   <div class="payment">
+    <div>
+    <p class="QR">Hi! <%=username%></p>
+    <p class="QR">Scan QR code for payment</p>
+   <center> <img src="<%=image%>" alt="" class="image"></center>
+    <p class="QR">or</p>
+   <center> <button class="button"><a href="<%=link%>">Click here</a></button></center>
+</div>
+</div>
 </body>
 </html>

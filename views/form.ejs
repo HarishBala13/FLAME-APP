@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form</title>
+    <link rel="stylesheet" href="/assets/form.css">
+    <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap"> -->
+</head>
+<body>
+    <div class="form">  
+        <form action="/signup" method="post" onsubmit="return validate()">
+            <h1 class="topic">register form</h1>
+            <div class="flex">
+            <div class="right">
+                <div class="rights">
+                    <input type="text" placeholder="Enter the name of participants" class="field" name="partname" id="partname" onkeyup="validName()">
+                    <small id="error1">error message</small>
+                </div>
+                <div class="rights">
+                    <input type="text" placeholder="Enter the Mail Id of participants" class="field" name="email" id="email" onkeyup="validateEmail()">
+                    <small id="error5">error message</small>
+                </div>
+                <div class="rights">
+                    <input type="text" placeholder="Enter your college name" class="field" name="collegename" id="collegename" onkeyup="validCollegeName()">
+                    <small id="error4">error message</small>
+                </div>
+                <div class="rights">
+                    <input type="text" placeholder="Enter the team name" class="field" name="teamname" id="teamname" onkeyup="validTeamName()">
+                    <small id="error3">error message</small>
+                </div>
+                <div class="rights">
+                    <input type="text" placeholder="Enter your mobile" class="field" name="mobile" id="mobile" onkeyup="validateMobile()">
+                    <small id="error2">error message</small>
+                </div>
+                <div class="rights">
+                    <label for="">no of team members</label>
+                    <div class="member">
+                        <input type="checkbox" id="member" name="member" value="1" onclick="memberValidate(this)"><h4>1 member</h4>
+                    </div>
+                    <div class="member">
+                        <input type="checkbox" id="member" value="2" name="member" onclick="memberValidate(this)"><h4>2 members</h4>
+                    </div>
+                    <div class="member">
+                        <input type="checkbox" id="member" value="3" name="member" onclick="memberValidate(this)"><h4>3 members</h4>
+                    </div>
+                    <div class="member"> 
+                        <input type="checkbox" id="member" value="4" name="member" onclick="memberValidate(this)"><h4>4 members</h4>
+                    </div>
+                    <div class="member">
+                        <small id="memError" class="memError">error message</small>
+                    </div>
+                   </div>
+            </div>
+            <div class="left">
+                <div class="lefts">
+                    <label for="">choose your year of studying</label>
+                    <div class="year">
+                        <input type="checkbox" id="year" value="I" name="year" onclick="yearValidate(this)">
+                        <h4>I year</h4>
+                    </div>
+                    <div class="year">
+                        <input type="checkbox" id="year" value="II" name="year"  onclick="yearValidate(this)">
+                        <h4>II year</h4>
+                    </div>
+                    <div class="year">
+                        <input type="checkbox" id="year" value="III" name="year"  onclick="yearValidate(this)">
+                        <h4>III year</h4>
+                    </div>
+                    <div class="year">
+                        <input type="checkbox" id="year" value="IV" name="year"  onclick="yearValidate(this)">
+                        <h4>IV year</h4>
+                    </div>
+                    <small class="yearError" id="yearError">error message</small>
+                 </div>
+    
+                    <label for="">technical events</label>
+                    <div class="techEvents">
+                        <input type="checkbox" id="event" value="Paper Presentation" name="techevent" onclick="techeventValidate(this)">
+                        <h4>Paper Presentation</h4>
+                    </div>
+                    <div class="techEvents">
+                        <input type="checkbox" id="event" value="Design Dynastry" name="techevent" onclick="techeventValidate(this)">
+                        <h4>Design Dynastry</h4>
+                    </div>
+                    <div class="techEvents">
+                        <input type="checkbox" id="event" value="Engine Assembly" name="techevent" onclick="techeventValidate(this)">
+                        <h4>Engine Assembly</h4>
+                    </div>
+                    <div class="techEvents">
+                        <input type="checkbox" id="event" value="Brain Bytes" name="techevent" onclick="techeventValidate(this)">
+                        <h4>Brain Bytes</h4>
+                    </div>
+                    <div class="techEvents">
+                        <input type="checkbox" id="event" value="Logic Lingo" name="techevent" onclick="techeventValidate(this)">
+                        <h4>Logic Lingo</h4>
+                    </div>
+                    <div class="techEvents">
+                        <input type="checkbox" id="event" value="Visual Memory" name="techevent" onclick="techeventValidate(this)">
+                        <h4>Visual Memory</h4>
+                    </div>
+                    
+                    <small id="techeventError" class="techeventError">error message</small>
+               
+                    <label for="">nontechnical events</label>
+                    <div class="nontechEvents">
+                        <input type="checkbox" id="event" value="Blink Movies" name="nontechevent" onclick="nontecheventValidate(this)">
+                        <h4>Blink Movies</h4>
+                    </div>
+                    <div class="nontechEvents">
+                        <input type="checkbox" id="event" value="Face Art" name="nontechevent" onclick="nontecheventValidate(this)">
+                        <h4>Face Art</h4>
+                    </div>
+                    <div class="nontechEvents">
+                        <input type="checkbox" id="event" value="Chain Reaction" name="nontechevent" onclick="nontecheventValidate(this)">
+                        <h4>Chain Reaction</h4>
+                    </div>
+                    <div class="nontechEvents">
+                        <input type="checkbox" id="event" value="Body Language Ballet" name="nontechevent" onclick="nontecheventValidate(this)">
+                        <h4>Body Language Ballet</h4>
+                    </div>
+                    <div class="nontechEvents">
+                        <input type="checkbox" id="event" value="Meme Creation" name="nontechevent" onclick="nontecheventValidate(this)">
+                        <h4>Meme Creation</h4>
+                    </div>
+                    <small id="nontecheventError" class="nontecheventError">error message</small>
+                    <div class="lefts">
+                      <input type="checkbox" name="workshop" value="yes" id="workshop" class="workshop">
+                      <h2 class="work">E-Bike Workshop</h2>
+                  </div>
+                  <div>
+                    <button type="submit" class="register">register</button>
+                  </div>
+                
+                
+            </div>
+          </div>
+                 
+        </form>
+    </div>
+
+    <script>
+        var member=[];
+        var i=0;
+        var year=[];
+        var j=0;
+       
+        var techevent=[];
+        var k=0;
+        
+        var nontechevent=[];
+        var l=0;
+        
+        var count=0;
+        function memberValidate(mem){
+            if(!member.includes(mem.value)){
+                member[i++]=mem.value;
+            }
+            else if(member.includes(mem.value)){
+                const ind=member.indexOf(mem.value);
+                var memb=a=member.splice(ind,1);
+                i--;
+            }
+            else if(member.length<1){
+                member=[];
+                document.getElementById('memError').innerHTML="select atleast one option";
+            }
+            else{
+                 member[i++]=mem.value;
+            }
+            console.log(member);
+            if(member.length==1){
+                document.getElementById('memError').innerText="success";
+            
+                document.getElementById('memError').style.display="block";
+                return count++;
+            }
+            else{
+                document.getElementById('memError').innerText="select any one option";
+            }
+            
+        }
+        function yearValidate(ye){
+            if(!year.includes(ye.value)){
+                year[j++]=ye.value;
+            }
+            else if(year.includes(ye.value)){
+                const ind=year.indexOf(ye.value);
+                var yea=year.splice(ind,1);
+                j--;
+            }
+            else if(year.length<1){
+                year=[];
+                document.getElementById('yearError').innerHTML="select atleast one option";
+            }
+            else{
+                year[i++]=ye.value;
+            }
+
+            if(year.length==1){
+                document.getElementById('yearError').innerText="success";            
+                document.getElementById('yearError').style.display="block";
+                return count++;            
+            }
+            else{
+                document.getElementById('yearError').innerText="select any one option";
+            }
+            
+        }
+        function techeventValidate(ev){
+            if(!techevent.includes(ev.value)){
+                techevent[k++]=ev.value;
+            }
+            else if(techevent.includes(ev.value)){
+                const ind=techevent.indexOf(ev.value);
+                var eve=techevent.splice(ind,1);
+                k--;
+            }
+            else if(techevent.length<1){
+                techevent=[];
+                document.getElementById('techeventError').innerHTML="select atleast one option";
+            }
+            else{
+                techevent[k++]=ev.value;
+            }
+
+           if(techevent.length==1){
+                document.getElementById('techeventError').innerText="success";
+                document.getElementById('techeventError').style.display="block";  
+                return count++;          
+            }
+            else{
+                document.getElementById('techeventError').innerText="select any one option only";
+            }
+            
+        }
+        function nontecheventValidate(ev){
+            if(!nontechevent.includes(ev.value)){
+                nontechevent[l++]=ev.value;
+            }
+            else if(nontechevent.includes(ev.value)){
+                const ind=nontechevent.indexOf(ev.value);
+                var eve=nontechevent.splice(ind,1);
+                l--;
+            }
+            else if(nontechevent.length<1){
+                nontechevent=[];
+                document.getElementById('nontecheventError').innerHTML="select atleast one option";
+            }
+            else{
+                nontechevent[k++]=ev.value;
+            }
+
+           if(nontechevent.length==1){
+                document.getElementById('nontecheventError').innerText="success";
+                document.getElementById('nontecheventError').style.display="block";
+                return count++;            
+            }
+            else{
+                document.getElementById('nontecheventError').innerText="select any one option only";
+            }
+            
+        }
+
+
+
+        //////////////////////////////////////////
+    const username=document.getElementById('partname');
+    const teamname=document.getElementById('teamname');
+    const collegename=document.getElementById('collegename');
+   const mobile=document.getElementById('mobile');
+    const emai=document.getElementById('email');
+        
+        function validName(){
+        const user=username.value;
+        if(user==" "){
+           username.style.border="2px solid red";
+            error1.style.color="red";
+            error1.innerHTML="do not blank";
+            error1.style.visibility="visible";
+           
+        }
+        else if(user.length<6){
+           username.style.border="2px solid red";
+            error1.style.color="red";
+           error1.innerHTML="Username must contains 6 letters";
+            error1.style.visibility="visible";
+         }
+         else if(!namecheck(username)){
+           username.style.border="2px solid red";
+            error1.style.color="red";
+           error1.innerHTML="Username only characters";
+            error1.style.visibility="visible";
+         }
+         else{
+            username.style.border="2px solid green";
+            error1.style.color="green";
+            error1.innerHTML="success";
+            error1.style.visibility="visible";
+            return count++;
+        }
+    }
+
+    function namecheck(){
+                var namvalue=username.value.trim();
+                var count5=0,count6=0;
+                for( i=0;i<namvalue.length;i++){
+                    const nam=namvalue.charCodeAt(i);
+                    if(nam>=65 && nam<=90)
+                    {
+                        count5++;
+                    }
+                    else if(nam>=97 && nam<=122)
+                    {
+                        count6++;
+                    }
+                }
+                if(count5>0 || count6>0)
+                {
+                    return true;
+                }
+                else {
+                    
+                }return false;
+                }
+
+    //------------------------------------------------------------
+
+    //-----------------------team name validation-----------------------------
+    
+    function validTeamName(){
+        const user=teamname.value;
+        if(user==" "){
+            teamname.style.border="2px solid red";
+            error3.style.color="red";
+            error3.innerHTML="do not blank";
+            error3.style.visibility="visible";
+           
+        }
+        else if(user.length<6){
+            teamname.style.border="2px solid red";
+            error3.style.color="red";
+           error3.innerHTML="Username must contains 6 letters";
+            error3.style.visibility="visible";
+         }
+         else if(!teamnamecheck(teamname)){
+            teamname.style.border="2px solid red";
+            error3.style.color="red";
+           error3.innerHTML="Username only characters";
+            error3.style.visibility="visible";
+         }
+         else{
+            teamname.style.border="2px solid green";
+            error3.style.color="green";
+            error3.innerHTML="success";
+            error3.style.visibility="visible";
+            return count++;
+        }
+    }
+
+    function teamnamecheck(){
+                var namvalue=teamname.value.trim();
+                var count5=0,count6=0;
+                for( i=0;i<namvalue.length;i++){
+                    const nam=namvalue.charCodeAt(i);
+                    if(nam>=65 && nam<=90)
+                    {
+                        count5++;
+                    }
+                    else if(nam>=97 && nam<=122)
+                    {
+                        count6++;
+                    }
+                }
+                if(count5>0 || count6>0)
+                {
+                    return true;
+                }
+                else {
+                    
+                }return false;
+                }
+
+        //--------------------------------------------------------------
+        function validCollegeName(){
+        const user=collegename.value;
+        if(user==" "){
+            collegename.style.border="2px solid red";
+            error4.style.color="red";
+            error4.innerHTML="do not blank";
+            error4.style.visibility="visible";
+           
+        }
+        else if(user.length<6){
+            collegename.style.border="2px solid red";
+            error4.style.color="red";
+           error4.innerHTML="Username must contains 6 letters";
+            error4.style.visibility="visible";
+         }
+         else if(!collegenamecheck(collegename)){
+            collegename.style.border="2px solid red";
+            error4.style.color="red";
+           error4.innerHTML="Username only characters";
+            error4.style.visibility="visible";
+         }
+         else{
+            collegename.style.border="2px solid green";
+            error4.style.color="green";
+            error4.innerHTML="success";
+            error4.style.visibility="visible";
+            return count++;
+        }
+    }
+
+    function collegenamecheck(){
+                var namvalue=collegename.value.trim();
+                var count5=0,count6=0;
+                for( i=0;i<namvalue.length;i++){
+                    const nam=namvalue.charCodeAt(i);
+                    if(nam>=65 && nam<=90)
+                    {
+                        count5++;
+                    }
+                    else if(nam>=97 && nam<=122)
+                    {
+                        count6++;
+                    }
+                }
+                if(count5>0 || count6>0)
+                {
+                    return true;
+                }
+                else {
+                    
+                }return false;
+                }
+
+        //-----------------------mobile validation-----------------------------
+    
+
+            function validateMobile(){
+                const mob=mobile.value;
+                if(mob==" "){
+                 mobile.style.border="2px solid red";
+                 error2.style.color="red";
+                 error2.innerHTML="do not blank";
+                 error2.style.visibility="visible";
+                 
+                }
+                else if(!mobilecheck(mobile)){
+            mobile.style.border="2px solid red";
+            error2.style.color="red";
+            error2.innerHTML="mobile number should contains only numbers";
+            error2.style.visibility="visible";
+          
+        }
+        else{
+            mobile.style.border="2px solid green";
+            error2.style.color="green";
+            error2.innerHTML="success";
+            error2.style.visibility="visible";
+            return count++;
+        }
+       
+    }
+
+    
+
+    function mobilecheck(){
+                var mobvalue=mobile.value.trim();
+                var count4=0;
+                for( i=0;i<mobvalue.length;i++)
+		{
+			const first=mobvalue.charCodeAt(i);
+			if(first>=48 && first<=57)
+			{
+				count4++;
+			}
+		}
+		if(count4==10)
+		{
+			return true;
+		}
+		else {
+			return false;
+		}
+            }
+
+    //---------------------------------------------------------------
+
+    //-----------------------Email validation-----------------------------
+    
+            function validateEmail(){
+                const emaiValue=emai.value;
+                console.log(emaiValue);
+                if(emaiValue==""){
+                    emai.style.border="2px solid red";
+            error5.style.color="red";
+            error5.innerHTML="do not blank";
+            error5.style.visibility="visible";
+                }
+                else if(!emailcheck(emai)){
+                    emai.style.border="2px solid red";
+            error5.style.color="red";
+            error5.innerHTML="email contains @,.com or .in";
+            error5.style.visibility="visible";
+                }
+                else{
+                    emai.style.border="2px solid green";
+            error5.style.color="green";
+            error5.innerHTML="success";
+            error5.style.visibility="visible";
+            return count++;
+                }
+            }
+
+            
+
+    function emailcheck(){
+        const emaiValue=emai.value;
+        if(emaiValue.includes('@') && (emaiValue.includes('.com') || emaiValue.includes('.in'))){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    //---------------------------------------------------------------
+
+
+    //-----------------------form validation-----------------------------
+    
+
+            function validate(){
+                const val=count;
+                if(val>=8){
+                    return true;
+                }
+                else{
+                    return false;
+                }
+            }
+    </script>
+</body>
+</html>
