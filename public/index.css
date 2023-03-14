@@ -116,7 +116,7 @@ html{
 }
 .span span{
     display: block;
-    background: url('/Images/Fire.jpg');
+    background: url('/assets/images/Fire.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
