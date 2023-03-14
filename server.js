@@ -111,11 +111,7 @@ app.get('/payment',(req,res)=>{
       html:`         
       <h4 style=" font-size: 20px; color: black;">Hi Participant(s),</h4>
       <img src="https://healthy-teal-skunk.cyclic.app/assets/images/Flame_with_bg-removebg-preview.png" alt="FLAME logo" style=" width: 250px; height: 200px;  border-radius: 50%;">
-      <p style=" text-align: justify; font-size: 20px; color: black;">Thanks for registering the Event in Flame 2k23. Please ensure that you made a payment, otherwise click the below button to make the payment for confirming the event.</p>
-      <center><button style=" border: 2px solid black; border: none;  background: green;  padding: 10px; border-radius: 10px;">
-      <a style=" text-decoration: none; color: white;" href="https://healthy-teal-skunk.cyclic.app/payment">Click here to Payment Page</a>
-      </button>
-      </center>
+      <p style=" text-align: justify; font-size: 20px; color: black;">Thanks for registering the Event in Flame 2k23. Please ensure that you made a payment, otherwise make the payment for confirming the event.</p>
       <p style=" text-align: justify;  font-size: 20px; color: black;">Thanks,<br>FLAME 2k23.</p>`
    };
       
