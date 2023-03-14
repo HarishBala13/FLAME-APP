@@ -1,21 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/payment.css">
-    <title>Payment</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="/assets/images/Flame_with_bg-removebg-preview_adobe_express.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FLAME</title>
+        <link rel="stylesheet" href="/assets/payment.css">
+    </head>
+    
 <body>
+    <div class="loaderBox" id="loaderBox">
+        <div class="loader" id="loader">
+            <img src="/assets/images/loader.png" alt="">
+        </div>
+    </div>
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div class="headers" >
+            <div id="home">
+                <img src="/assets/images/Flame_with_bg-removebg-preview.png" alt="FLAME Logo" class="Logo">
+            </div>
+            <div class="span">
+                <span> FLAME 2K23</span>
+            </div>
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+        </nav>
+    </header>
+   
    <div class="payment">
     <div>
-    <p class="QR">Hi! <%=username%></p>
+    <p class="QR">Hi!  <span class="message"><%=Participantname%></span></p>
     <p class="QR">Scan QR code for payment</p>
-   <center> <img src="<%=image%>" alt="" class="image"></center>
+    <center> <img src="<%=image%>" class="image"></center>
     <p class="QR">or</p>
-   <center> <button class="button"><a href="<%=link%>">Click here</a></button></center>
+    <center> <button class="button"><a href="<%=link%>">Click here</a></button></center>
+</div>
+<div>
+<div class="flex">
+<div >
+    <img src="/assets/images/google pay.webp" alt="Gpay" title="Gpay">
+</div>
+<div >
+    <img src="/assets/images/phonepe.webp" alt="Phonepe" title="Phonepe">
+</div>
+<div>
+    <img src="/assets/images/paytm.webp" alt="Paytm" title="Paytm">
 </div>
 </div>
+</div>
+</div>
+</div>
+
+<script>
+    window.onscroll = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            }
+            else {
+                document.querySelector('.header').classList.remove('active');
+            }
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        }
+        window.onload = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            }
+            else {
+                document.querySelector('.header').classList.remove('active');
+            }
+        }
+
+        let menu = document.querySelector('#menu-btn');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+        window.onload = function(){
+            var loader = document.getElementById('loaderBox'); 
+            loader.style.display = 'none';
+        };
+</script>
 </body>
 </html>

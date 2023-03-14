@@ -27,7 +27,7 @@ html{
     scroll-behavior: smooth;
 }
 .header{
-   display: flex;
+    display: flex;
    align-items: center;
    justify-content: space-between;
    position: sticky;
@@ -100,7 +100,7 @@ html{
     transform: scaleX(1);
 }
 .heading p{
-    font-size: 3vw;
+    font-size: 3.5vw;
     text-align: center;
     overflow-x:hidden;
     text-transform: uppercase;
@@ -116,7 +116,7 @@ html{
 }
 .span span{
     display: block;
-    background: url('/assets/images/Fire.jpg');
+    background: url('/Images/Fire.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -139,7 +139,7 @@ html{
     animation: first 1.5s linear 1;
     position: absolute;
     top: 19%;
-    left: 20%;
+    left: 13%;
 }
 @keyframes first {
     0%{
@@ -154,7 +154,7 @@ html{
     animation: second 1.5s linear 1;
     position: absolute;
     top: 19%;
-    left: 45%;
+    left: 42%;
 }
 @keyframes second{
     0%{
@@ -183,6 +183,7 @@ html{
     position: relative;
     font-weight: bold;
     font-size: 0.6cm;
+    cursor: pointer;
 }
 .register::before{
 content: "";
@@ -215,9 +216,8 @@ transition: transform 500ms ease-in-out;
     text-align: center;
     font-size: 4rem;
 }
-.techevent h3{
-    font-size: 2rem;
-    
+.techevent h4{
+    font-size: 4rem;
 }
 .event img{
     width:300px;
@@ -233,6 +233,9 @@ transition: transform 500ms ease-in-out;
     font-size: 2rem;
     text-align: justify;
 }
+.techevent p{
+    font-size: 6rem;
+}
 .footer{
     background-color: black;
     padding: 1.5rem 5%;
@@ -244,13 +247,14 @@ transition: transform 500ms ease-in-out;
     gap: 4rem;
     align-items: center;
 }
-.grid{
-    color:white;
-    font-size: 0.3cm;
+.footericon{
+    padding-top: 3rem;
 }
-.grid p{
-    font-size: 2rem;
+.footericon img{
+    font-size: 3rem;
+    cursor: pointer;
 }
+
 .studetails p{
     color: #fff;
     font-size: 1.8rem;
@@ -275,6 +279,9 @@ transition: transform 500ms ease-in-out;
 }
 .map i{
     color: limegreen;
+}
+.map iframe{
+    padding-top: 1rem;
 }
 .links{
     padding-top: 4rem;
@@ -310,19 +317,43 @@ transition: transform 500ms ease-in-out;
     font-size:2rem;
     color: white;
     text-align: justify;
-    width: 400px;
+    width: 350px;
 }
 .copyrights{
-    background-image: url("https://github.githubassets.com/images/modules/site/home-campaign/bg-stars-1.webp");
+    background-color: red;
+    padding: 1.5rem;
+}
+.copyrights img{
+    width: 70px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 1rem;
 }
 .source{
     display: flex;
     justify-content: space-between;
-    padding: 1rem 3%;
+    align-items: center;
 }
 .source p{
     font-size: 2rem;
     color: white;
+}
+.designers{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:2.5rem;
+}
+.designers p{
+    color: #fff;
+    font-size: 1.2vw;
+    text-transform: uppercase;
+}
+.designers .img1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 .rules{
     background-color: white;
@@ -422,6 +453,23 @@ transition: transform 500ms ease-in-out;
     color: limegreen;
     background-color: limegreen;
 }
+.designers img{
+    width: 150px;
+    height: 100px;
+    border-radius: 50%;
+    margin:1rem ;
+}
+.designers h3{
+    text-align: center;
+    font-size: 3vw;
+    text-transform: uppercase;
+}
+h3{
+    color: #fff;
+    font-size: 1.5vw;
+    text-transform: capitalize;
+    padding: 1rem;
+}
 
 /*//////////////////////////////////////////////////////////////////////////////////////////////*/
 @media(max-width:1200px){
@@ -495,6 +543,15 @@ transition: transform 500ms ease-in-out;
         width: 250px;
         font-size: 5em;
     }
+    .copyrights p{
+        font-size: 1.3rem;
+     }
+     .copyrights img{
+        width: 50px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0.7rem;
+    }
 }
 @media(max-width:768px){
     .swiper{
@@ -504,6 +561,15 @@ transition: transform 500ms ease-in-out;
     .span{
         width: 250px;
         font-size: 5em;
+    }
+    .copyrights p{
+        font-size: 1.3rem;
+     }
+     .copyrights img{
+        width: 50px;
+        height: 30px;
+        border-radius: 50%;
+        margin: 0.7rem;
     }
 }
 @media(max-width:580px){
@@ -522,6 +588,15 @@ transition: transform 500ms ease-in-out;
         height:50px;
         margin-left: -40%;
         
+      }
+      .techevent p{
+        font-size: 4rem;
+    }
+    .techevent h4{
+        font-size: 3rem;
+    }
+      .navbar a::before{
+        display: none;
       }
       .register{
         height: 30px;
@@ -545,8 +620,16 @@ transition: transform 500ms ease-in-out;
         display: block;
         margin: 2rem;
         font-size: 2rem;
-        
      }
+     .copyrights p{
+        font-size: 1.1rem;
+     }
+     .copyrights img{
+        width: 30px;
+        height: 20px;
+        border-radius: 50%;
+        margin: 0.5rem;
+    }
      .loaderBox{
         width: 100%;
         position: fixed;
@@ -573,7 +656,6 @@ transition: transform 500ms ease-in-out;
   .header .span{
     margin-left: -16%;
   }
-
   .swiper{
     width:300px;
     height:250px
@@ -581,6 +663,22 @@ transition: transform 500ms ease-in-out;
 .span{
     width: 200px;
     font-size: 4em;
+}
+.designers img{
+    width: 50px;
+    height: 40px;
+    border-radius: 50%;
+    margin:0.5rem ;
+}
+.designers p{
+    color: #fff;
+    font-size: 2.5vw;
+    text-transform: uppercase;
+}
+h3{
+    text-align: center;
+    font-size: 4vw;
+    text-transform: uppercase;
 }
 }
 @media(max-width:450px){

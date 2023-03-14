@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="/Images/Flame_with_bg-removebg-preview_adobe_express.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FLAME</title>
+        <link rel="stylesheet" href="/assets/contact.css">
+    </head>
+<body>
+    <div class="loaderBox" id="loaderBox">
+        <div class="loader" id="loader">
+            <img src="/assets/images/loader.png" alt="">
+        </div>
+    </div>
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div class="headers" >
+            <div id="home">
+                <img src="/assets/images/Flame_with_bg-removebg-preview.png" alt="FLAME Logo" class="Logo">
+            </div>
+            <div class="span">
+                <span> FLAME 2K23</span>
+            </div>
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/events">Events</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="contact">
+        <h5>Contact Details</h5>
+    </section>
+    <section class="details">
+        <div class="grid">
+            <div>
+                <h2>College Details</h2>
+                <!-- <p><img src="Images/Map contact.gif" alt="Location" title="Location"> Knowledge Institute of Technology -->
+                    KIOT-Campus, NH544, Kakapalayam,
+                    Salem, Tamilnadu - 637504 India.</p>
+                    <div>
+                        <p>
+                       <img src="/assets/images/call.png" alt="call" title="call"> +91427 2433900 <br>
+                       <img src="/assets/images/call.png" alt="call" title="call"> +91 98947 01234 <br>
+                       <img src="/assets/images/Email.png" alt="Email" title="Email">  info@kiot.ac.in</p>
+                    </div>
+            </div>
+            <div>
+                <h2>Flame Student Incharge</h2>
+                <p>Secretary : <br> Mr.S.Karthick- +91 9361525272 </p>
+                <p>Treasurer : <br> Mr.J.V.Jeeva Aravinth- +91 7904925991</p><br>
+                <h2>Flame Student Coordinators</h2>
+                <p>Mr.S.Dhinakar &nbsp;- +91 9942216454</p>
+                <p>Mr.V.Rohit &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;- +91 9655222767</p>
+            </div>
+            <div class="email">
+                <h2>If any queries regarding any event, please contact the below mail ID </h2>
+                <p><a href="mailto:mechroninz2k23@gmail.com" target="_blank">mechroninz2k23@gmail.com</a></p>
+            </div>
+        </div>
+    </section>
+    <script>
+        window.onscroll = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            }
+            else {
+                document.querySelector('.header').classList.remove('active');
+            }
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        }
+        window.onload = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            }
+            else {
+                document.querySelector('.header').classList.remove('active');
+            }
+        }
+
+        let menu = document.querySelector('#menu-btn');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+        window.onload = function(){
+            var loader = document.getElementById('loaderBox'); 
+            loader.style.display = 'none';
+        };
+    </script>
+</body>
+</html>

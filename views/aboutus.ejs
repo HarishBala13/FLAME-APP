@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" href="/Images/Flame_with_bg-removebg-preview_adobe_express.svg">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+            integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+            integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>FLAME</title>
+        <link rel="stylesheet" href="/assets/aboutus.css">
+    </head>
+<body>
+    <div class="loaderBox" id="loaderBox">
+        <div class="loader" id="loader">
+            <img src="/assets/mages/loader.png" alt="">
+        </div>
+    </div>
+    <header class="header">
+        <div id="menu-btn" class="fas fa-bars"></div>
+        <div class="headers" >
+            <div id="home">
+                <img src="/assets/images/Flame_with_bg-removebg-preview.png" alt="FLAME Logo" class="Logo">
+            </div>
+            <div class="span">
+                <span> FLAME 2K23</span>
+            </div>
+        </div>
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="/events">Events</a>
+            <a href="/contact">Contact</a>
+        </nav>
+    </header>
+    <section>
+    <div class="about">
+        <div>
+        <p>About FLAME 2K23 </p></div>
+        <div>
+        <img src="/assets/images/Flame_with_bg-removebg-preview.png" alt="FLAME" title="FLAME"></div>
+        <h2 class="aboutus">
+           <li> To bring event management skills to the students. </li>
+           <li> To bring the industrial experts to the students for industrial exposure and technical skill development. </li>
+           <li> To improve the student performance in the Technical Events and Fun Events.</h2> </li>
+    </div>
+</section>
+<section>
+    <div class="student">
+        <h6>FLAME 2K23- Student Coordinators</h6>
+    </div>
+</section>
+<section class="stucoordinate">
+    <div class="flex">
+    <div class="round">
+        <div>
+        <img src="/assets/images/Karthick.png" alt="FLAME Incharge" title="FLAME Incharge"></div>
+       <div> <h1>KARTHICK S- Secretary</h1></div>
+    </div>
+    <div class="round">
+       <div> <img src="/assets/images/jeeva- Edited.png" alt="FLAME Incharge" title="FLAME Incharge"></div>
+        <div><h1>JEEVA ARAVINTH J V- Treasurer</h1></div>
+    </div>
+    <div>
+        <img src="/assets/images/Rohit - Edited.png" alt="FLAME Incharge" title="FLAME Incharge">
+        <h1>ROHIT V- Joint Secretary</h1>
+    </div>
+    <div class="round">
+        <div> <img src="/assets/images/Kavin.png" alt="FLAME Incharge" title="FLAME Incharge"></div>
+        <div><h1>KAVINRAJ M K- Joint Treasurer</h1></div>
+    </div>
+</div>
+</section>
+    <script>
+        window.onscroll = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            }
+            else {
+                document.querySelector('.header').classList.remove('active');
+            }
+            menu.classList.remove('fa-times');
+            navbar.classList.remove('active');
+        }
+        window.onload = () => {
+            if (window.scrollY > 0) {
+                document.querySelector('.header').classList.add('active');
+            }
+            else {
+                document.querySelector('.header').classList.remove('active');
+            }
+        }
+
+        let menu = document.querySelector('#menu-btn');
+        let navbar = document.querySelector('.navbar');
+
+        menu.onclick = () => {
+            menu.classList.toggle('fa-times');
+            navbar.classList.toggle('active');
+        }
+        window.onload = function(){
+            var loader = document.getElementById('loaderBox'); 
+            loader.style.display = 'none';
+        };
+    </script>
+</body>
+</html>

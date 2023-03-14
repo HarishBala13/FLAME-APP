@@ -1,19 +1,28 @@
 const  mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 const RegisterSchema = new Schema({
-    User_Email:{
+    Participant_Email:{
         type:String, required:true,
     },
-    User_Name:{
+    Participant_Name_1:{
         type:String, required:true,
     },
-    User_College_Name:{
+    Participant_Name_2:{
         type:String, required:true,
     },
-    User_Team_Members:{
+    Participant_Name_3:{
+        type:String, required:true,
+    },
+    Participant_Name_4:{
+        type:String, required:true,
+    },
+    College_Name:{
+        type:String, required:true,
+    },
+    Team_Name:{
         type:String, required: true,
     },
-    User_Mobile_Number:{
+    Participant_Mobile_Number:{
         type:String, required:true,
     },
     Team_Count:{

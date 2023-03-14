@@ -27,18 +27,34 @@ app.get('/',(req,res)=>{
    res.render("index");
 });
 
+app.get('/aboutus',(req,res)=>{
+   res.render("aboutus");
+});
+
+app.get('/contact',(req,res)=>{
+   res.render("contact");
+});
+
+app.get('/events',(req,res)=>{
+   res.render("events");
+});
+
+app.get('/form',(req,res)=>{
+   res.render("form");
+});
+
 app.get('/payment',(req,res)=>{
    res.render("payment");
 });
 
-app.get('/form',(req,res)=>{
-    res.render("form");
- });
 
 
  app.post('/signup', async (req,res)=>{
    const email=req.body.email;
-   const name=req.body.partname;
+   const name1=req.body.partname1;
+   const name2=req.body.partname2;
+   const name3=req.body.partname3;
+   const name4=req.body.partname4;
    const collegename=req.body.collegename;
    const mobilenumber=req.body.mobile;
    const teamname=req.body.teamname;
@@ -53,57 +69,29 @@ app.get('/form',(req,res)=>{
    try{
       await registerform.insertMany([
          {
-            User_Email: email, 
-            User_Name: name, 
-            User_College_Name: collegename, 
-            User_Mobile_Number:mobilenumber, 
-            User_Team_Members:teamname, 
-            Team_Count:teamcount,
-            Year_Of_Study:department,
-            Technical_Event:techevent,
-            Non_Technical_Event:nontechevent,
-            Workshop:workshop
+            Participant_Email : email, 
+            Participant_Name_1 : name1, 
+            Participant_Name_2 : name2, 
+            Participant_Name_3 : name3, 
+            Participant_Name_4 : name4, 
+            College_Name : collegename, 
+            Participant_Mobile_Number : mobilenumber, 
+            Team_Name : teamname, 
+            Team_Count : teamcount,
+            Year_Of_Study : department,
+            Technical_Event : techevent,
+            Non_Technical_Event : nontechevent,
+            Workshop : workshop
          }
       ])
    }
    catch(error){  console.log(error);   }
-   qr=["/assets/images/150.jpg","/assets/images/300.jpg","/assets/images/450.jpg","/assets/images/600.jpg","/assets/images/750.jpg","/assets/images/900.jpg","/assets/images/1050.jpg","/assets/images/1200.jpg","/assets/images/1350.jpg","/assets/images/1500.jpg","/assets/images/1650.jpg","/assets/images/1800.jpg"];
-         qrlink=["upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=150.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=300.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=450.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=600.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=750.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=900.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1050.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1200.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1350.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1500.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1650.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1800.00&cu=INR&aid=uGICAgID9js7ZHw"];
-         for(i=0;i<qr.length;i++){
-          qrc=qr[i].slice(15);
-          ind=qrc.indexOf(".");
-          qrcode=qrc.slice(0,ind);
-          //console.log(qrc);
-          money=parseInt(qrcode);
-          if(workshop=="yes"){
-            amount=member*450;
-            if(amount==money){
-               image=qr[i];
-               link=qrlink[i];
-               username=name;
-               console.log(link);
-               console.log(image);
-               res.render("payment");
-            }
-          }
-           else{
-              amount=member*150;
-              if(amount==money){
-                 image=qr[i];
-                 link=qrlink[i];
-                 username=name;
-                 console.log(link);
-                 console.log(image);
-                 res.render("payment");
-              } 
-           }
-         }  
-         
+
    var transporter=nodemailer.createTransport({
       service:'gmail',
       auth:{
-         user:process.env.EMAIL_ID,
-         pass:process.env.EMAIL_PASSWORD
+         user:"2k19me070@kiot.ac.in",
+         pass:"Jeeva2001@arav"
       }
       });
    
@@ -128,6 +116,38 @@ app.get('/form',(req,res)=>{
    console.log('email sent : '+info.response);          
    }
  });
+
+
+   qr=["/assets/images/150.jpg","/assets/images/300.jpg","/assets/images/450.jpg","/assets/images/600.jpg","/assets/images/750.jpg","/assets/images/900.jpg","/assets/images/1050.jpg","/assets/images/1200.jpg","/assets/images/1350.jpg","/assets/images/1500.jpg","/assets/images/1650.jpg","/assets/images/1800.jpg"];
+   qrlink=["upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=150.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=300.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=450.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=600.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=750.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=900.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1050.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1200.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1350.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1500.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1650.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1800.00&cu=INR&aid=uGICAgID9js7ZHw"];
+      for(i=0;i<qr.length;i++){
+          qrc=qr[i].slice(15);
+          ind=qrc.indexOf(".");
+          qrcode=qrc.slice(0,ind);
+          money=parseInt(qrcode);
+          if(workshop=="yes"){
+            amount=member*450;
+            if(amount==money){
+               image=qr[i];
+               link=qrlink[i];
+               Participantname=name1;
+               console.log(link);
+               console.log(image);
+               res.render("payment");
+            }
+          }
+           else{
+              amount=member*150;
+              if(amount==money){
+                 image=qr[i];
+                 link=qrlink[i];
+                 Participantname=name1;
+                 console.log(link);
+                 console.log(image);
+                 res.render("payment");
+              } 
+           }
+         }  
 });
 
 connectDB().then(()=>{
