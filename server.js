@@ -72,30 +72,6 @@ app.get('/payment',(req,res)=>{
    else{
       amount=member*150;
    }
-
-  
-   try{
-      await registerform.insertMany([
-         {
-            Participant_Email : email, 
-            Participant_Name_1 : name1, 
-            Participant_Name_2 : name2, 
-            Participant_Name_3 : name3, 
-            Participant_Name_4 : name4, 
-            College_Name : collegename, 
-            Participant_Mobile_Number : mobilenumber, 
-            Team_Name : teamname, 
-            Team_Count : teamcount,
-            Year_Of_Study : department,
-            Technical_Event : techevent,
-            Non_Technical_Event : nontechevent,
-            Workshop : workshop,
-            Registration_Fee : amount
-         }
-      ])
-   }
-   catch(error){  console.log(error);   }
-   console.log(email);     
    var transporter=nodemailer.createTransport({
       service:'gmail',
       auth:{
@@ -126,6 +102,30 @@ app.get('/payment',(req,res)=>{
    console.log('email sent : '+info.response);          
    }
  });
+  
+   try{
+      await registerform.insertMany([
+         {
+            Participant_Email : email, 
+            Participant_Name_1 : name1, 
+            Participant_Name_2 : name2, 
+            Participant_Name_3 : name3, 
+            Participant_Name_4 : name4, 
+            College_Name : collegename, 
+            Participant_Mobile_Number : mobilenumber, 
+            Team_Name : teamname, 
+            Team_Count : teamcount,
+            Year_Of_Study : department,
+            Technical_Event : techevent,
+            Non_Technical_Event : nontechevent,
+            Workshop : workshop,
+            Registration_Fee : amount
+         }
+      ])
+   }
+   catch(error){  console.log(error);   }
+   console.log(email);     
+   
 
  qr=["/assets/images/150.jpg","/assets/images/300.jpg","/assets/images/450.jpg","/assets/images/600.jpg","/assets/images/750.jpg","/assets/images/900.jpg","/assets/images/1050.jpg","/assets/images/1200.jpg","/assets/images/1350.jpg","/assets/images/1500.jpg","/assets/images/1650.jpg","/assets/images/1800.jpg"];
  qrlink=["upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=150.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=300.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=450.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=600.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=750.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=900.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1050.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1200.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1350.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1500.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1650.00&cu=INR&aid=uGICAgID9js7ZHw","upi://pay?pa=jeevaaravinth2001-1@okhdfcbank&pn=JeevaAravinthJV&am=1800.00&cu=INR&aid=uGICAgID9js7ZHw"];

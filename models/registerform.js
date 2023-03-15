@@ -32,10 +32,10 @@ const RegisterSchema = new Schema({
         type:String, required:true,
     },
     Technical_Event:{
-        type:String, required:false,
+        type:[], required:false,
     },
     Non_Technical_Event:{
-        type:String, required:false,
+        type:[], required:false,
     },
     Workshop:{
         type:String, required:false,
