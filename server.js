@@ -51,13 +51,13 @@ function emailreader(){
    var transporter=nodemailer.createTransport({
       service:'gmail',
       auth:{
-         user:"2k19me016@kiot.ac.in",
-         pass:"harish@13kiot"
+         user:"2k19me070@kiot.ac.in",
+         pass:"Jeeva2001@arav"
       }
       });
    
       var mailoptions={
-      from:'2k19me016@kiot.ac.in',
+      from:'2k19me070@kiot.ac.in',
       to:email,
       subject:'FLAME 2k23 - Event Registration',
       html:`         
