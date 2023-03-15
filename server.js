@@ -114,9 +114,9 @@ app.get('/payment',(req,res)=>{
       <p style=" text-align: justify; font-size: 20px; color: black;">Thanks for registering the Event in Flame 2k23. Please ensure that you made a payment, otherwise make the payment for confirming the event.</p>
       <p style=" text-align: justify;  font-size: 20px; color: black;">Regards,<br>FLAME 2k23.</p>
       <br><br>
-      <a href="https://www.facebook.com/profile.php?id=100090942617082" target="_blank"> <img src="/assets/images/Facebook.png" alt="Facebook" title="Facebook"> </a>
-      <a href="https://instagram.com/flame_mechroniz_2k23?igshid=ZDdkNTZiNTM=" target="_blank"> <img src="/assets/images/Instagram.png" alt="Instagram" title="Instagram"></a>
-      <a href="https://www.linkedin.com/in/flame-kiot-26aa53269/" target="_blank"><img src="/assets/images/Linkedin.png" alt="Linkedin" title="Linkedin"></a>
+      <a href="https://www.facebook.com/profile.php?id=100090942617082" target="_blank"> <img src="https://healthy-teal-skunk.cyclic.app/assets/images/Facebook.png" alt="Facebook" title="Facebook"> </a>
+      <a href="https://instagram.com/flame_mechroniz_2k23?igshid=ZDdkNTZiNTM=" target="_blank"> <img src="https://healthy-teal-skunk.cyclic.app/assets/images/Instagram.png" alt="Instagram" title="Instagram"></a>
+      <a href="https://www.linkedin.com/in/flame-kiot-26aa53269/" target="_blank"><img src="https://healthy-teal-skunk.cyclic.app/assets/images/Linkedin.png" alt="Linkedin" title="Linkedin"></a>
       `
    };
       
