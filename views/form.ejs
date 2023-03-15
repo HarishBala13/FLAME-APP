@@ -53,7 +53,7 @@
                                 <small id="error3">error message</small>
                             </div>
                             <div class="rights">
-                                <input type="text" placeholder="Enter your mobile" class="field" name="mobile" id="mobile" onkeyup="validateMobile()">
+                                <input type="text" placeholder="Enter your mobile" class="field" name="mobile" id="mobile" onkeyup="validateMobile()" maxlength="10">
                                 <small id="error2">error message</small>
                             </div>
                             <div class="rights">
@@ -102,27 +102,27 @@
                              <div class="lefts" id="techevent">
                                 <label for="">technical events</label>
                                 <div class="techEvents">
-                                    <input type="checkbox" id="event" value="Paper Presentation" name="techevent" onclick="techeventValidate(this)">
+                                    <input type="checkbox" id="techeventinput1" value="Paper Presentation" name="techevent" onclick="techeventValidate(this)">
                                     <h4>Paper Presentation</h4>
                                 </div>
                                 <div class="techEvents">
-                                    <input type="checkbox" id="event" value="Design Dynastry" name="techevent" onclick="techeventValidate(this)">
+                                    <input type="checkbox" id="techeventinput2" value="Design Dynastry" name="techevent" onclick="techeventValidate(this)">
                                     <h4>Design Dynastry</h4>
                                 </div>
                                 <div class="techEvents">
-                                    <input type="checkbox" id="event" value="Engine Assembly" name="techevent" onclick="techeventValidate(this)">
+                                    <input type="checkbox" id="techeventinput3" value="Engine Assembly" name="techevent" onclick="techeventValidate(this)">
                                     <h4>Engine Assembly</h4>
                                 </div>
                                 <div class="techEvents">
-                                    <input type="checkbox" id="event" value="Brain Bytes" name="techevent" onclick="techeventValidate(this)">
+                                    <input type="checkbox" id="techeventinput4" value="Brain Bytes" name="techevent" onclick="techeventValidate(this)">
                                     <h4>Brain Bytes</h4>
                                 </div>
                                 <div class="techEvents">
-                                    <input type="checkbox" id="event" value="Logic Lingo" name="techevent" onclick="techeventValidate(this)">
+                                    <input type="checkbox" id="techeventinput5" value="Logic Lingo" name="techevent" onclick="techeventValidate(this)">
                                     <h4>Logic Lingo</h4>
                                 </div>
                                 <div class="techEvents">
-                                    <input type="checkbox" id="event" value="Visual Memory" name="techevent" onclick="techeventValidate(this)">
+                                    <input type="checkbox" id="techeventinput6" value="Visual Memory" name="techevent" onclick="techeventValidate(this)">
                                     <h4>Visual Memory</h4>
                                 </div>
                                 
@@ -131,23 +131,23 @@
                             <div class="lefts" id="nontechevent">
                                 <label for="">non-technical events</label>
                                 <div class="nontechEvents">
-                                    <input type="checkbox" id="event" value="Blink Movies" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <input type="checkbox" id="nontecheventinput1" value="Blink Movies" name="nontechevent" onclick="nontecheventValidate(this)">
                                     <h4>Blink Movies</h4>
                                 </div>
                                 <div class="nontechEvents">
-                                    <input type="checkbox" id="event" value="Face Art" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <input type="checkbox" id="nontecheventinput2" value="Face Art" name="nontechevent" onclick="nontecheventValidate(this)">
                                     <h4>Face Art</h4>
                                 </div>
                                 <div class="nontechEvents">
-                                    <input type="checkbox" id="event" value="Chain Reaction" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <input type="checkbox" id="nontecheventinput3" value="Chain Reaction" name="nontechevent" onclick="nontecheventValidate(this)">
                                     <h4>Chain Reaction</h4>
                                 </div>
                                 <div class="nontechEvents">
-                                    <input type="checkbox" id="event" value="Body Language Ballet" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <input type="checkbox" id="nontecheventinput4" value="Body Language Ballet" name="nontechevent" onclick="nontecheventValidate(this)">
                                     <h4>Body Language Ballet</h4>
                                 </div>
                                 <div class="nontechEvents">
-                                    <input type="checkbox" id="event" value="Meme Creation" name="nontechevent" onclick="nontecheventValidate(this)">
+                                    <input type="checkbox" id="nontecheventinput5" value="Meme Creation" name="nontechevent" onclick="nontecheventValidate(this)">
                                     <h4>Meme Creation</h4>
                                 </div>
                                 <small id="nontecheventError" class="nontecheventError">error message</small>
@@ -169,7 +169,7 @@
 
             <script>
                 var member=[];
-                var i=0;
+                var z=0;
                 var year=[];
                 var j=0;
                
@@ -183,12 +183,12 @@
                 const membererror=document.getElementById('memError');
                 function memberValidate(mem){
                     if(!member.includes(mem.value)){
-                        member[i++]=mem.value;
+                        member[z++]=mem.value;
                     }
                     else if(member.includes(mem.value)){
                         const ind=member.indexOf(mem.value);
                         var memb=a=member.splice(ind,1);
-                        i--;
+                        z--;
                     }
                     else if(member.length<1){
                         member=[];
@@ -196,7 +196,7 @@
                         document.getElementById('memError').innerHTML="select any one option";
                     }
                     else{
-                         member[i++]=mem.value;
+                         member[z++]=mem.value;
                     }
                     console.log(member);
                     if(member.length==1){
@@ -266,8 +266,16 @@
                     document.getElementById('techeventError').style.visibility="visible"; 
                         document.getElementById('techeventError').innerText="success";
                         techev.style.color="green";
+                        console.log(techevent.length);
                         if(techevent.length==2){
                             document.getElementById('nontechevent').style.display="none";  
+                            document.getElementById('nontecheventinput1').checked=false;  
+                            document.getElementById('nontecheventinput2').checked=false;  
+                            document.getElementById('nontecheventinput3').checked=false;  
+                            document.getElementById('nontecheventinput4').checked=false;  
+                            document.getElementById('nontecheventinput5').checked=false; 
+                            nontechevent=[]; 
+                            l=0;
                         }
                         else{
                             document.getElementById('nontechevent').style.display="block";  
@@ -278,7 +286,7 @@
                     }
                     else{
                         techev.style.color="red";
-                        document.getElementById('techeventError').innerText="select any two option";
+                        document.getElementById('techeventError').innerText="select technical event(optional)";
                     }
                     
                 }
@@ -308,6 +316,15 @@
                         nontechev.style.color="green";
                         if(nontechevent.length==2){
                             document.getElementById('techevent').style.display="none";  
+                             document.getElementById('techeventinput1').checked=false;  
+                             document.getElementById('techeventinput2').checked=false;  
+                             document.getElementById('techeventinput3').checked=false;  
+                             document.getElementById('techeventinput4').checked=false;  
+                             document.getElementById('techeventinput5').checked=false;  
+                             document.getElementById('techeventinput6').checked=false;
+                             techevent=[]; 
+                             k=0; 
+                             console.log(techevent.length);
                         }
                         else{
                             document.getElementById('techevent').style.display="block";  
@@ -317,7 +334,7 @@
                     }
                     else{
                         nontechev.style.color="red";
-                        document.getElementById('nontecheventError').innerText="select any two option";
+                        document.getElementById('nontecheventError').innerText="select non-technical event(optional)";
                     }
                     
                 }
@@ -616,7 +633,6 @@
                     parterror1.style.color="green";
                     parterror1.innerHTML="success";
                     parterror1.style.visibility="visible";
-                    return count++;
                 }
             }
         
@@ -665,7 +681,6 @@
                     parterror2.style.color="green";
                     parterror2.innerHTML="success";
                     parterror2.style.visibility="visible";
-                    return count++;
                 }
             }
         
@@ -714,7 +729,6 @@
                     parterror3.style.color="green";
                     parterror3.innerHTML="success";
                     parterror3.style.visibility="visible";
-                    return count++;
                 }
             }
         
