@@ -23,7 +23,7 @@ const RegisterSchema = new Schema({
         type:String, required: true,
     },
     Participant_Mobile_Number:{
-        type:String, required:true,
+        type:Number, required:true,
     },
     Team_Count:{
         type:Number, required:true,

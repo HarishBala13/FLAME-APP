@@ -99,20 +99,25 @@ app.get('/payment',(req,res)=>{
    var transporter=nodemailer.createTransport({
       service:'gmail',
       auth:{
-         user:"2k19me070@kiot.ac.in",
-         pass:"Jeeva2001@arav"
+         user:"2k19me016@kiot.ac.in",
+         pass:"harish@13kiot"
       }
       });
    
       var mailoptions={
-      from:'2k19me070@kiot.ac.in',
+      from:'2k19me016@kiot.ac.in',
       to:email,
       subject:'FLAME 2k23 - Event Registration',
       html:`         
       <h4 style=" font-size: 20px; color: black;">Hi Participant(s),</h4>
       <img src="https://healthy-teal-skunk.cyclic.app/assets/images/Flame_with_bg-removebg-preview.png" alt="FLAME logo" style=" width: 250px; height: 200px;  border-radius: 50%;">
       <p style=" text-align: justify; font-size: 20px; color: black;">Thanks for registering the Event in Flame 2k23. Please ensure that you made a payment, otherwise make the payment for confirming the event.</p>
-      <p style=" text-align: justify;  font-size: 20px; color: black;">Thanks,<br>FLAME 2k23.</p>`
+      <p style=" text-align: justify;  font-size: 20px; color: black;">Regards,<br>FLAME 2k23.</p>
+      <br><br>
+      <a href="https://www.facebook.com/profile.php?id=100090942617082" target="_blank"> <img src="/assets/images/Facebook.png" alt="Facebook" title="Facebook"> </a>
+      <a href="https://instagram.com/flame_mechroniz_2k23?igshid=ZDdkNTZiNTM=" target="_blank"> <img src="/assets/images/Instagram.png" alt="Instagram" title="Instagram"></a>
+      <a href="https://www.linkedin.com/in/flame-kiot-26aa53269/" target="_blank"><img src="/assets/images/Linkedin.png" alt="Linkedin" title="Linkedin"></a>
+      `
    };
       
    transporter.sendMail(mailoptions,(err,info)=>{
