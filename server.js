@@ -111,7 +111,6 @@ app.get('/payment',(req,res)=>{
              Participantname=name1;
              console.log(link);
              console.log(image);
-             res.render("payment");
              var transporter=nodemailer.createTransport({
                service:'gmail',
                auth:{
@@ -143,6 +142,8 @@ app.get('/payment',(req,res)=>{
             }
           });
            
+             res.render("payment");
+           
           }
          }
          else{
@@ -152,7 +153,6 @@ app.get('/payment',(req,res)=>{
                Participantname=name1;
                console.log(link);
                console.log(image);
-               res.render("payment");
                var transporter=nodemailer.createTransport({
                   service:'gmail',
                   auth:{
@@ -183,6 +183,8 @@ app.get('/payment',(req,res)=>{
                console.log('email sent : '+info.response);          
                }
              });
+              
+               res.render("payment");
               
             } 
          }
