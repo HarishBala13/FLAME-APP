@@ -173,18 +173,17 @@ html{
 }
 
 .heading1{
-    position: relative;
+    display: flex;
+    align-items: center;
     margin-bottom: 1%;
+}
+.heading1 .first1{
+    text-align: center;
 }
 .heading1 img{
     width: 100px;
     height: 90px;
     padding-right: 2rem;
-}
-.first1{
-    position: absolute;
-    top: 19%;
-    left: 16%;
 }
 .second1{
     position: absolute;
@@ -613,6 +612,10 @@ h3{
     .event img{
         width:250px;
         height:275px;
+    }
+    .heading1 img{
+        width:60px;
+        height:50px;
     }
 }
 @media(max-width:580px){
