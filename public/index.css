@@ -54,7 +54,7 @@ html{
     height: 500px;
     z-index: -1;
   }
-  .swiper-pagination-bullet-active{
+.swiper-pagination-bullet-active{
     background: red;
 }
 .swiper-slide{
@@ -70,7 +70,6 @@ html{
 }
 .navbar{
     font-size: 1.8rem;
-    
 }
 .navbar a{
     font-size: 1.7rem;
@@ -78,7 +77,6 @@ html{
     color: green;
     background-color: white;
     position: relative;
-    
 }
 .navbar a::before{
     content: "";
@@ -104,6 +102,14 @@ html{
     text-align: center;
     overflow-x:hidden;
     text-transform: uppercase;
+    /* z-index: -1; */
+}
+.heading1 p{
+    font-size: 3.5vw;
+    text-align: center;
+    overflow-x:hidden;
+    text-transform: uppercase;
+    color: green;
     /* z-index: -1; */
 }
 .header.active{
@@ -166,6 +172,26 @@ html{
     }
 }
 
+.heading1{
+    position: relative;
+    margin-bottom: 1%;
+}
+.heading1 img{
+    width: 100px;
+    height: 90px;
+    padding-right: 2rem;
+}
+.first1{
+    position: absolute;
+    top: 19%;
+    left: 16%;
+}
+.second1{
+    position: absolute;
+    top: 19%;
+    left: 57%;
+}
+
 @-webkit-keyframes fire {
     0%{background-position: 0% 10%;}
     0%{background-position: 100% 10%;}
@@ -195,7 +221,6 @@ bottom: 0;
 transform: scaleX(0);
 border-radius: 30px;
 background-color: black;
-
 transition: transform 500ms ease-in-out;
 }
 
@@ -388,11 +413,9 @@ transition: transform 500ms ease-in-out;
     z-index: -1;
 }
 @keyframes rotate {
-
     0%{
         transform: rotate(-360deg);
     }
-    
 }
 .loader img{
     width: 100px;
@@ -489,6 +512,10 @@ h3{
         width:850px;
         height:400px
     }
+    .event img{
+        width:250px;
+        height:275px;
+    }
 }
 @media(max-width:991px){
     html{
@@ -507,6 +534,10 @@ h3{
         width:800px;
         height:400px
     }
+    .event img{
+        width:250px;
+        height:275px;
+    }
 }
 @media(max-width:892px){
     html{
@@ -522,6 +553,10 @@ h3{
       .swiper{
         width:680px;
         height:380px
+    }
+    .event img{
+        width:250px;
+        height:275px;
     }
     }
 @media(max-width:770px){
@@ -552,6 +587,10 @@ h3{
         border-radius: 50%;
         margin: 0.7rem;
     }
+    .event img{
+        width:250px;
+        height:275px;
+    }
 }
 @media(max-width:768px){
     .swiper{
@@ -571,10 +610,22 @@ h3{
         border-radius: 50%;
         margin: 0.7rem;
     }
+    .event img{
+        width:250px;
+        height:275px;
+    }
 }
 @media(max-width:580px){
     #menu-btn{
         display: block;
+    }
+    .event img{
+        width:250px;
+        height:240px;
+    }
+    .heading1 img{
+        width:65px;
+        height:55px;
     }
     .header .navbar{
         position: absolute;
@@ -586,8 +637,7 @@ h3{
      .header .Logo{
         width:100px;
         height:50px;
-        margin-left: -40%;
-        
+        margin-left: -40%;        
       }
       .techevent p{
         font-size: 4rem;

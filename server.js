@@ -64,7 +64,6 @@ app.get('/payment',(req,res)=>{
    const nontechevent=req.body.nontechevent;
    const member=parseInt(req.body.member);
    const workshop=req.body.workshop;
-   console.table(req.body);
    var amount=0;
    if(workshop=="yes"){
       amount=member*450;
@@ -91,6 +90,7 @@ app.get('/payment',(req,res)=>{
             Registration_Fee : amount
          }
       ])
+      console.log(registerform);
    }
    catch(error){  console.log(error);   }
    console.log(email);     
@@ -113,6 +113,9 @@ app.get('/payment',(req,res)=>{
             
              var transporter=nodemailer.createTransport({
                service:'gmail',
+               host: "2k19me070@kiot.ac.in",
+               port: 465,
+               secure: true,
                auth:{
                   user:"2k19me070@kiot.ac.in",
                   pass:"Jeeva2001@arav"
@@ -155,6 +158,9 @@ app.get('/payment',(req,res)=>{
                
                var transporter=nodemailer.createTransport({
                   service:'gmail',
+                  host: "2k19me070@kiot.ac.in",
+                  port: 465,
+                  secure: true,
                   auth:{
                      user:"2k19me070@kiot.ac.in",
                      pass:"Jeeva2001@arav"
