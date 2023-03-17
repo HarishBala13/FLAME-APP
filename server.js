@@ -24,6 +24,9 @@ const connectDB= async()=>{
 }
 
 app.get('/',(req,res)=>{
+   console.log("Hostname : "+req.hostname);
+   host=req.get('host');
+   console.log("Host - "+host);
    res.render("index");
 });
 
@@ -64,6 +67,9 @@ app.get('/payment',(req,res)=>{
    const nontechevent=req.body.nontechevent;
    const member=parseInt(req.body.member);
    const workshop=req.body.workshop;
+   //console.log("Hostname : "+req.hostname);
+   host=req.get('host');
+   //console.log("Host - "+host);
    var amount=0;
    if(workshop=="yes"){
       amount=member*450;
