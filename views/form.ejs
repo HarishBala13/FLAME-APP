@@ -252,6 +252,8 @@
                         const ind=techevent.indexOf(ev.value);
                         var eve=techevent.splice(ind,1);
                         k--;
+                        return count--;
+                        document.getElementById('techeventError').innerHTML="";
                     }
                     else if(techevent.length<1){
                         techevent=[];
@@ -299,6 +301,8 @@
                         const ind=nontechevent.indexOf(ev.value);
                         var eve=nontechevent.splice(ind,1);
                         l--;
+                        return  count--;
+                        document.getElementById('nontecheventError').innerHTML="";
                     }
                     else if(nontechevent.length<1){
                         nontechevent=[];
@@ -602,7 +606,7 @@
         
                     function validate(){
                         const val=count;
-                        if(val>=8){
+                        if(val>=6){
                             return true;
                         }
                         else{

@@ -24,9 +24,6 @@ const connectDB= async()=>{
 }
 
 app.get('/',(req,res)=>{
-   console.log("Hostname : "+req.hostname);
-   host=req.get('host');
-   console.log("Host - "+host);
    res.render("index");
 });
 
@@ -66,13 +63,19 @@ app.get('/payment',(req,res)=>{
    const techevent=req.body.techevent;
    const nontechevent=req.body.nontechevent;
    const member=parseInt(req.body.member);
+   var newtech=techevent;
+   var newnontech=nontechevent;
+   console.log(techevent);
+   console.log(nontechevent);
    const workshop=req.body.workshop;
-   //console.log("Hostname : "+req.hostname);
-   host=req.get('host');
-   //console.log("Host - "+host);
    var amount=0;
    if(workshop=="yes"){
-      amount=member*450;
+      if(newtech==undefined || newnontech==undefined){
+         amount=member*300;
+      }
+      else{
+         amount=member*450;
+      }
    }
    else{
       amount=member*150;
@@ -96,7 +99,6 @@ app.get('/payment',(req,res)=>{
             Registration_Fee : amount
          }
       ])
-      console.log(registerform);
    }
    catch(error){  console.log(error);   }
    console.log(email);     
