@@ -108,9 +108,10 @@ app.get('/payment',(req,res)=>{
         ind=qrc.indexOf(".");
         qrcode=qrc.slice(0,ind);
         money=parseInt(qrcode);
-        console.log(amount);
+        
         if(workshop=="yes"){
           if(amount==money){
+            console.log(amount);
              image=qr[i];
              Participantname=name1;
              console.log(image);
@@ -166,6 +167,7 @@ app.get('/payment',(req,res)=>{
 
          else{
                if(amount==money){
+                  console.log(amount);
                   image=qr[i];
                   Participantname=name1;
                   console.log(image);
