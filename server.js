@@ -70,7 +70,7 @@ app.get('/payment',(req,res)=>{
    const workshop=req.body.workshop;
    var amount=0;
    if(workshop=="yes"){
-      if(newtech==undefined || newnontech==undefined){
+      if(newtech==undefined && newnontech==undefined){
          amount=member*300;
       }
       else{
@@ -135,7 +135,7 @@ app.get('/payment',(req,res)=>{
                      }
                      else{
                         console.log("Server is ready to send the Email....Done!!");
-                        resolve(succes);
+                        resolve(success);
                      }
                   });
                   });   
@@ -160,8 +160,9 @@ app.get('/payment',(req,res)=>{
                               else  console.log('email sent : '+info.response);          
                            });
                      });
+                     res.render("payment");  
             }
-            res.render("payment");  
+            
          }
 
          else{
