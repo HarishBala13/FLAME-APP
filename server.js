@@ -65,6 +65,8 @@ app.get('/payment',(req,res)=>{
    const member=parseInt(req.body.member);
    console.log(techevent.length);
    console.log(nontechevent.length);
+   console.log(techevent);
+   console.log(nontechevent);
    const workshop=req.body.workshop;
    var amount=0;
    if(workshop=="yes"){
