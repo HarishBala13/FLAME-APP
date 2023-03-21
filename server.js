@@ -103,11 +103,9 @@ app.get('/payment',(req,res)=>{
  qr=["/assets/images/150.jpg","/assets/images/300.jpg","/assets/images/450.jpg","/assets/images/600.jpg","/assets/images/750.jpg","/assets/images/900.jpg","/assets/images/1050.jpg","/assets/images/1200.jpg","/assets/images/1350.jpg","/assets/images/1500.jpg","/assets/images/1650.jpg","/assets/images/1800.jpg"];
     for(i=0;i<qr.length;i++){
         qrc=qr[i].slice(15);
-        console.log("QRC"+qrc)
         ind=qrc.indexOf(".");
         qrcode=qrc.slice(0,ind);
         money=parseInt(qrcode);
-        console.log(money);
         
         if(workshop=="yes"){
           if(amount==money){
@@ -159,9 +157,10 @@ app.get('/payment',(req,res)=>{
                               if(err) console.log(err);
                               else  console.log('email sent : '+info.response);          
                            });
-                     }); 
+                     });
+                     res.render("payment");  
             }
-            res.render("payment");             
+            
          }
 
          else{
@@ -214,8 +213,9 @@ app.get('/payment',(req,res)=>{
                                     else  console.log('email sent : '+info.response);          
                                  });
                            });
+                  res.render("payment");
+               
                } 
-               res.render("payment");
             } 
          }
 });
