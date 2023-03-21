@@ -187,7 +187,7 @@ app.get('/payment',(req,res)=>{
                            }
                            else{
                               console.log("Server is ready to send the Email....Done!!");
-                              resolve(succes);
+                              resolve(success);
                            }
                         });
                         });   
