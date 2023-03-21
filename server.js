@@ -65,20 +65,16 @@ app.get('/payment',(req,res)=>{
    const member=parseInt(req.body.member);
    console.log(techevent.length);
    console.log(nontechevent.length);
-   console.log(techevent);
-   console.log(nontechevent);
    const workshop=req.body.workshop;
    var amount=0;
    if(workshop=="yes"){
       if(techevent.length>=1 || nontechevent.length>=1){
          amount=member*450;
-         console.log(amount);
       }
      
    }
    else{
       amount=member*150;
-      console.log(amount);
    }
    try{
       await registerform.insertMany([
