@@ -108,6 +108,7 @@ app.get('/payment',(req,res)=>{
         ind=qrc.indexOf(".");
         qrcode=qrc.slice(0,ind);
         money=parseInt(qrcode);
+        console.log(amount);
         if(workshop=="yes"){
           if(amount==money){
              image=qr[i];
