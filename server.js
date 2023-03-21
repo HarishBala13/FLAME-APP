@@ -159,10 +159,9 @@ app.get('/payment',(req,res)=>{
                               if(err) console.log(err);
                               else  console.log('email sent : '+info.response);          
                            });
-                     });
-                     res.render("payment");  
+                     }); 
             }
-            
+            res.render("payment");             
          }
 
          else{
@@ -215,9 +214,8 @@ app.get('/payment',(req,res)=>{
                                     else  console.log('email sent : '+info.response);          
                                  });
                            });
-                  res.render("payment");
-               
                } 
+               res.render("payment");
             } 
          }
 });
