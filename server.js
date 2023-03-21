@@ -155,13 +155,12 @@ app.get('/payment',(req,res)=>{
                         await new Promise((resolve,reject)=>{
                            transporter.sendMail(mailoptions,(err,info)=>{
                               if(err) console.log(err);
-                              else  console.log('email sent : '+info.response);          
+                              else  {console.log('email sent : '+info.response);   
+                              res.render("payment"); }       
                            });
-                     });
-                     res.render("payment");  
+                     });    
             }
-            
-         }
+      }
 
          else{
                if(amount==money){
@@ -210,11 +209,11 @@ app.get('/payment',(req,res)=>{
                               await new Promise((resolve,reject)=>{
                                  transporter.sendMail(mailoptions,(err,info)=>{
                                     if(err) console.log(err);
-                                    else  console.log('email sent : '+info.response);          
+                                    else  {console.log('email sent : '+info.response);   
+                                    res.render("payment");
+                                 }     
                                  });
                            });
-                  res.render("payment");
-               
                } 
             } 
          }
