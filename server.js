@@ -68,11 +68,11 @@ app.get('/payment',(req,res)=>{
    const workshop=req.body.workshop;
    var amount=0;
    if(workshop=="yes"){
-      if(techevent=="" && nontechevent==""){
-         amount=member*300;
+      if(techevent!=undefined || nontechevent!=undefined){
+         amount=member*450;
       }
       else{
-         amount=member*450;
+         amount=member*300;
       }
    }
    else{
