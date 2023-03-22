@@ -60,15 +60,17 @@ app.get('/payment',(req,res)=>{
    const teamname=req.body.teamname;
    const teamcount=req.body.member;
    const department=req.body.year;
-   const techevent=toString(req.body.techevent);
-   const nontechevent=toString(req.body.nontechevent);
+   const techevent=req.body.techevent;
+   const nontechevent=req.body.nontechevent;
+   const techeventString=toString(req.body.techevent);
+   const nontecheventString=toString(req.body.nontechevent);
    const member=parseInt(req.body.member);
    console.log(techevent.length);
    console.log(nontechevent.length);
    const workshop=req.body.workshop;
    var amount=0;
    if(workshop=="yes"){
-      if(techevent.length>=1 || nontechevent.length>=1){
+      if(techeventString.length>=1 || nontecheventString.length>=1){
          amount=member*450;
       }
      
