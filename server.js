@@ -62,13 +62,13 @@ app.get('/payment',(req,res)=>{
    const department=req.body.year;
    const techevent=req.body.techevent;
    const nontechevent=req.body.nontechevent;
-   const techeventString=toString(req.body.techevent);
-   const nontecheventString=toString(req.body.nontechevent);
+   
    const member=parseInt(req.body.member);
    const workshop=req.body.workshop;
+
    var amount=0;
    if(workshop=="yes"){
-      if(techeventString.length>=1 || nontecheventString.length>=1){
+      if(techevent!=undefined || nontechevent!=undefined){
          amount=member*450;
       }
      else{
