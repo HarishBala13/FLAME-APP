@@ -71,7 +71,9 @@ app.get('/payment',(req,res)=>{
       if(techeventString.length>=1 || nontecheventString.length>=1){
          amount=member*450;
       }
-     
+     else{
+      amount=member*300;
+     }
    }
    else{
       amount=member*150;
